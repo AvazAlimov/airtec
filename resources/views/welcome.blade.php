@@ -7,7 +7,7 @@
         <a class="btn btn-default">СДЕЛАТЬ ЗАКАЗ</a>
     </div>
 
-    <div class="container-fluid text-center" style="background-color: #ddd">
+    <div class="container-fluid text-center bg-primary">
         <h2>OUR CATALOGUE!</h2>
         <div class="row">
             <div class="col-md-4">
@@ -32,7 +32,7 @@
     <div class="container-fluid">
         <div class="media container">
             <div class="media-body">
-                <h3 class="media-heading">About</h3>
+                <h3 class="media-heading">ABOUT</h3>
                 <hr>
                 <p>
                     OOO "Airtechnic" asd asd as das da das das das das da as das dasd as das das dasd as d
@@ -52,7 +52,76 @@
         </div>
     </div>
 
-    <div>
+    <div class="container-fluid text-center bg-primary">
+        <h2>SERVICES</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="img-circle" style="font-size: 4em;">
+                    <span class="glyphicon glyphicon-user"></span>
+                </div>
+                <h4>LOREM IPSUM</h4>
+            </div>
+            <div class="col-md-3">
+                <div class="img-circle" style="font-size: 4em;">
+                    <span class="glyphicon glyphicon-user"></span>
+                </div>
+                <h4>LOREM IPSUM</h4>
+            </div>
+            <div class="col-md-3">
+                <div class="img-circle" style="font-size: 4em;">
+                    <span class="glyphicon glyphicon-user"></span>
+                </div>
+                <h4>LOREM IPSUM</h4>
+            </div>
+            <div class="col-md-3">
+                <div class="img-circle" style="font-size: 4em;">
+                    <span class="glyphicon glyphicon-user"></span>
+                </div>
+                <h4>LOREM IPSUM</h4>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="img-circle" style="font-size: 4em;">
+                    <span class="glyphicon glyphicon-user"></span>
+                </div>
+                <h4>LOREM IPSUM</h4>
+            </div>
+            <div class="col-md-3">
+                <div class="img-circle" style="font-size: 4em;">
+                    <span class="glyphicon glyphicon-user"></span>
+                </div>
+                <h4>LOREM IPSUM</h4>
+            </div>
+            <div class="col-md-3">
+                <div class="img-circle" style="font-size: 4em;">
+                    <span class="glyphicon glyphicon-user"></span>
+                </div>
+                <h4>LOREM IPSUM</h4>
+            </div>
+            <div class="col-md-3">
+                <div class="img-circle" style="font-size: 4em;">
+                    <span class="glyphicon glyphicon-user"></span>
+                </div>
+                <h4>LOREM IPSUM</h4>
+            </div>
+        </div>
+    </div>
 
+    <div class="container-fluid text-center">
+        <h2>CONTACTS</h2>
+        <div class="row text-left">
+            <div class="col-md-6">
+                <h3>Address</h3>
+                <p>Tashkent, Mirzo-Ulugbek, Ziyolilar, 9</p>
+                <h3>Phone</h3>
+                <p>+99871 255 55 55</p>
+                <h3>Mobile</h3>
+                <p>+99897 777 77 77</p>
+            </div>
+            <div class="col-md-6" style="background-color: #eee; height: 250px;">
+            </div>
+        </div>
     </div>
 @endsection
