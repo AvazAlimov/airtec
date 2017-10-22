@@ -58,7 +58,7 @@
                 </div>
             </form>
 
-            <div class="modal fade" id="mainModal" role="dialog">
+            <div class="modal fade" id="updateModal" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <form action="{{ route('tag.update') }}" method="POST">
                         {{ csrf_field() }}
@@ -100,7 +100,7 @@
                     </div>
                     <div class="col-md-1 col-xs-2">
                         <button type="button" class="btn btn-warning" data-toggle="modal"
-                                data-target="#mainModal"
+                                data-target="#updateModal"
                                 onclick="editTag('{!! $tag->id !!}', '{!! $tag->name !!}')">
                             <i class="fa fa-pencil"></i>
                         </button>
