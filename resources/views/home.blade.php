@@ -28,9 +28,10 @@
     </nav>
 
     <div class="container">
-        <div id="section1" class="section" style="display: block;">
+        <div id="section1" class="section" style="display: none;">
         </div>
-        <div id="section2" class="section" style="display: block;">
+
+        <div id="section2" class="section" style="display: none;">
             <br>
             <form action="{{ route('tag.create.submit') }}" method="POST">
                 {{ csrf_field() }}
@@ -117,7 +118,8 @@
                 <hr>
             @endforeach
         </div>
-        <div id="section3" class="section" style="display: block;">
+
+        <div id="section3" class="section" style="display: none;">
         </div>
     </div>
 @endsection
