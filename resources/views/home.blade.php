@@ -53,11 +53,11 @@
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <input type="submit" class="btn btn-success" value="Добавить">
+                        <input type="submit" class="btn btn-success" value="Add">
                     </div>
                 </div>
             </form>
-            <form action="" method="POST">
+            <form action="{{ route('tag.update') }}" method="POST">
                 {{ csrf_field() }}
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <input type="submit" class="btn btn-success" value="Добавить">
+                        <input type="submit" class="btn btn-primary" value="Update">
                     </div>
                 </div>
             </form>

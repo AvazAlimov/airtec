@@ -25,6 +25,20 @@ class TagController extends Controller
         return redirect()->intended(route('home'));
     }
 
+    public function update(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'id' => 'required'
+        ]);
+
+        $tag = Tag::find($request->id);
+        $tag->name = $request->name;
+        $tag->save();
+
+        return redirect()->intended(route('home'));
+    }
+
     public function delete($id)
     {
         $tag = Tag::find($id);
