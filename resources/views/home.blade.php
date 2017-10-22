@@ -32,10 +32,10 @@
         </div>
         <div id="section2" class="section" style="display: block;">
             <h3 class="page-header">ADD TAG</h3>
-            <form action="" method="POST">
+            <form action="{{ route('tag.create.submit') }}" method="POST">
+                {{ csrf_field() }}
                 <div class="panel panel-default">
                     <div class="panel-body">
-
                         <div class="col-md-12 form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-2 control-label">Полное имя:</label>
                             <div class="col-md-10">
@@ -48,7 +48,6 @@
                                 @endif
                             </div>
                         </div>
-
                     </div>
                     <div class="panel-footer">
                         <input type="submit" class="btn btn-success" value="Добавить">
