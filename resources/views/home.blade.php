@@ -77,6 +77,7 @@
                         </form>
                     </div>
                 </div>
+                <hr>
             @endforeach
         </div>
         <div id="section3" class="section" style="display: block;">
