@@ -12,6 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: #FFFFFF;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
