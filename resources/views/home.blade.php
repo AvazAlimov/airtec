@@ -57,32 +57,41 @@
                     </div>
                 </div>
             </form>
-            <form action="{{ route('tag.update') }}" method="POST">
-                {{ csrf_field() }}
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        UPDATE TAG
-                    </div>
-                    <div class="panel-body">
-                        <div class="col-md-12 form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="updated_name" class="col-md-2 control-label">Полное имя:</label>
-                            <div class="col-md-10">
-                                <input id="updated_name" type="text" class="form-control" name="name"
-                                       value="{{ old('name') }}" required autofocus>
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
+
+            <div class="modal fade" id="mainModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <form action="{{ route('tag.update') }}" method="POST">
+                        {{ csrf_field() }}
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                UPDATE TAG
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-12 form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                        <label for="updated_name" class="col-md-2 control-label">Полное имя:</label>
+                                        <div class="col-md-10">
+                                            <input id="updated_name" type="text" class="form-control" name="name"
+                                                   value="{{ old('name') }}" required autofocus>
+                                            @if ($errors->has('name'))
+                                                <span class="help-block">
 	                                        <strong>{{ $errors->first('name') }}</strong>
                                     </span>
-                                @endif
+                                            @endif
+                                        </div>
+                                        <input id="updated_id" type="hidden" name="id">
+                                    </div>
+                                </div>
                             </div>
-                            <input id="updated_id" type="hidden" name="id">
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-primary" value="Update">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="panel-footer">
-                        <input type="submit" class="btn btn-primary" value="Update">
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
+
             <h3 class="page-header">ALL TAGS</h3>
             @foreach($tags as $tag)
                 <div class="row">
@@ -90,7 +99,8 @@
                         <h4>{{ $tag->name }}</h4>
                     </div>
                     <div class="col-md-1 col-xs-2">
-                        <button type="button" class="btn btn-warning"
+                        <button type="button" class="btn btn-warning" data-toggle="modal"
+                                data-target="#mainModal"
                                 onclick="editTag('{!! $tag->id !!}', '{!! $tag->name !!}')">
                             <i class="fa fa-pencil"></i>
                         </button>
