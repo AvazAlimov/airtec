@@ -6,7 +6,7 @@
             padding: 0 10px 0 10px;
         }
 
-        .control-label{
+        .control-label {
             margin-top: 8px;
         }
     </style>
@@ -57,14 +57,24 @@
             <h3 class="page-header">ALL TAGS</h3>
             @foreach($tags as $tag)
                 <div class="row">
-                    <div class="col-md-5 col-xs-8">
+                    <div class="col-md-10 col-xs-7">
                         <h4>{{ $tag->name }}</h4>
                     </div>
                     <div class="col-md-1 col-xs-2">
-                        <input type="submit" class="btn btn-success" value="E">
+                        <form action="" method="post">
+                            {{ csrf_field() }}
+                            <button type="submit" class="btn btn-warning">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                        </form>
                     </div>
                     <div class="col-md-1 col-xs-2">
-                        <input type="submit" class="btn btn-danger" value="R">
+                        <form action="{{ route('tag.delete', $tag->id) }}" method="post">
+                            {{ csrf_field() }}
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             @endforeach

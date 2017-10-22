@@ -24,4 +24,11 @@ class TagController extends Controller
 
         return redirect()->intended(route('home'));
     }
+
+    public function delete($id)
+    {
+        $tag = Tag::find($id);
+        $tag->delete();
+        return redirect()->intended(route('home'));
+    }
 }
