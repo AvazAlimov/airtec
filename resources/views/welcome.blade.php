@@ -7,7 +7,7 @@
         <a class="btn btn-default">СДЕЛАТЬ ЗАКАЗ</a>
     </div>
 
-    <div class="container-fluid text-center bg-primary">
+    <div class="container-fluid text-center">
         <h2>OUR CATALOGUE!</h2>
         <div class="row">
             <div class="col-md-4">
@@ -27,6 +27,65 @@
             </div>
         </div>
         <a class="btn btn-default">SHOW CATALOGUE</a>
+    </div>
+
+    <div class="container-fluid text-center" style="background-color: #eee">
+        <h2>SERVICES</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="img-circle" style="font-size: 4em;">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                    <h4>LOREM IPSUM</h4>
+                </div>
+                <div class="col-md-3">
+                    <div class="img-circle" style="font-size: 4em;">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                    <h4>LOREM IPSUM</h4>
+                </div>
+                <div class="col-md-3">
+                    <div class="img-circle" style="font-size: 4em;">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                    <h4>LOREM IPSUM</h4>
+                </div>
+                <div class="col-md-3">
+                    <div class="img-circle" style="font-size: 4em;">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                    <h4>LOREM IPSUM</h4>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="img-circle" style="font-size: 4em;">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                    <h4>LOREM IPSUM</h4>
+                </div>
+                <div class="col-md-3">
+                    <div class="img-circle" style="font-size: 4em;">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                    <h4>LOREM IPSUM</h4>
+                </div>
+                <div class="col-md-3">
+                    <div class="img-circle" style="font-size: 4em;">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                    <h4>LOREM IPSUM</h4>
+                </div>
+                <div class="col-md-3">
+                    <div class="img-circle" style="font-size: 4em;">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                    <h4>LOREM IPSUM</h4>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="container-fluid">
@@ -52,67 +111,10 @@
         </div>
     </div>
 
-    <div class="container-fluid text-center bg-primary">
-        <h2>SERVICES</h2>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="img-circle" style="font-size: 4em;">
-                    <span class="glyphicon glyphicon-user"></span>
-                </div>
-                <h4>LOREM IPSUM</h4>
-            </div>
-            <div class="col-md-3">
-                <div class="img-circle" style="font-size: 4em;">
-                    <span class="glyphicon glyphicon-user"></span>
-                </div>
-                <h4>LOREM IPSUM</h4>
-            </div>
-            <div class="col-md-3">
-                <div class="img-circle" style="font-size: 4em;">
-                    <span class="glyphicon glyphicon-user"></span>
-                </div>
-                <h4>LOREM IPSUM</h4>
-            </div>
-            <div class="col-md-3">
-                <div class="img-circle" style="font-size: 4em;">
-                    <span class="glyphicon glyphicon-user"></span>
-                </div>
-                <h4>LOREM IPSUM</h4>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="img-circle" style="font-size: 4em;">
-                    <span class="glyphicon glyphicon-user"></span>
-                </div>
-                <h4>LOREM IPSUM</h4>
-            </div>
-            <div class="col-md-3">
-                <div class="img-circle" style="font-size: 4em;">
-                    <span class="glyphicon glyphicon-user"></span>
-                </div>
-                <h4>LOREM IPSUM</h4>
-            </div>
-            <div class="col-md-3">
-                <div class="img-circle" style="font-size: 4em;">
-                    <span class="glyphicon glyphicon-user"></span>
-                </div>
-                <h4>LOREM IPSUM</h4>
-            </div>
-            <div class="col-md-3">
-                <div class="img-circle" style="font-size: 4em;">
-                    <span class="glyphicon glyphicon-user"></span>
-                </div>
-                <h4>LOREM IPSUM</h4>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid text-center">
-        <h2>CONTACTS</h2>
+    <div class="container-fluid text-center" style="background-color: #eee">
         <div class="row text-left">
             <div class="col-md-6">
+                <h2>CONTACTS</h2>
                 <h3>Address</h3>
                 <p>Tashkent, Mirzo-Ulugbek, Ziyolilar, 9</p>
                 <h3>Phone</h3>
@@ -120,8 +122,14 @@
                 <h3>Mobile</h3>
                 <p>+99897 777 77 77</p>
             </div>
-            <div class="col-md-6" style="background-color: #eee; height: 250px;">
+            <div class="col-md-6" style="background-color: white; height: 300px;">
             </div>
         </div>
+    </div>
+
+    <div class="footer" style="background-color: #2a2a2a">
+        <br>
+        <br>
+        <br>
     </div>
 @endsection
