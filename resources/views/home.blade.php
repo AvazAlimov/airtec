@@ -57,14 +57,14 @@
             <h3 class="page-header">ALL TAGS</h3>
             @foreach($tags as $tag)
                 <div class="row">
-                    <div class="col-md-10">
-                        <p>{{ $tag->name }}</p>
+                    <div class="col-md-5 col-xs-8">
+                        <h4>{{ $tag->name }}</h4>
                     </div>
-                    <div class="col-md-1">
-                        <input type="submit" class="btn btn-success" value="Добавить">
+                    <div class="col-md-1 col-xs-2">
+                        <input type="submit" class="btn btn-success" value="E">
                     </div>
-                    <div class="col-md-1 col-s">
-                        <input type="submit" class="btn btn-success" value="Добавить">
+                    <div class="col-md-1 col-xs-2">
+                        <input type="submit" class="btn btn-danger" value="R">
                     </div>
                 </div>
             @endforeach
