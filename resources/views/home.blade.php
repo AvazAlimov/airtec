@@ -1,23 +1,31 @@
 @extends('layouts.app')
 
+@section('style')
+    <style>
+        .navs{
+            padding: 0 10px 0 10px;
+        }
+    </style>
+@endsection
+
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+    <nav class="navbar navbar-default" style="margin-top: 50px;">
+        <ul class="nav navbar-nav">
+            <li data-toggle="tab" class="navs">
+                <a href="">PRODUCTS</a>
+            </li>
+            <li data-toggle="tab" class="navs">
+                <a href="">TAGS</a>
+            </li>
+            <li data-toggle="tab" class="navs">
+                <a href="">STATISTICS</a>
+            </li>
+        </ul>
+    </nav>
+@endsection
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+@section('script')
+    <script>
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    </script>
 @endsection

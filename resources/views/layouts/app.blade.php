@@ -18,6 +18,8 @@
             margin: 0;
         }
     </style>
+
+    @yield('style')
 </head>
 <body>
     <div id="app">
@@ -86,5 +88,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('script')
 </body>
 </html>
