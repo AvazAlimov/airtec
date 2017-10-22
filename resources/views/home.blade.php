@@ -6,7 +6,7 @@
             padding: 0 10px 0 10px;
         }
 
-        label{
+        .control-label{
             margin-top: 8px;
         }
     </style>
@@ -54,6 +54,20 @@
                     </div>
                 </div>
             </form>
+            <h3 class="page-header">ALL TAGS</h3>
+            @foreach($tags as $tag)
+                <div class="row">
+                    <div class="col-md-10">
+                        <p>{{ $tag->name }}</p>
+                    </div>
+                    <div class="col-md-1">
+                        <input type="submit" class="btn btn-success" value="Добавить">
+                    </div>
+                    <div class="col-md-1 col-s">
+                        <input type="submit" class="btn btn-success" value="Добавить">
+                    </div>
+                </div>
+            @endforeach
         </div>
         <div id="section3" class="section" style="display: block;">
         </div>
