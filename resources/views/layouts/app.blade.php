@@ -15,6 +15,7 @@
     <style>
         .navbar {
             background-color: #FFFFFF;
+            margin: 0;
         }
     </style>
 </head>
