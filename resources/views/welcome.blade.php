@@ -64,7 +64,7 @@
             background-color: #f8f8f8;
         }
 
-        #services > hr {
+        .hr {
             width: 200px;
             height: 3px;
             background-color: #FF5722;
@@ -138,7 +138,7 @@
     <div class="container-fluid text-center" id="services">
         <br>
         <h2>SERVICES</h2>
-        <hr>
+        <hr class="hr">
         <div class="container">
             <div class="col-md-4 text-left">
                     <ul>
@@ -179,27 +179,10 @@
         <br>
     </div>
 
-    <div class="container-fluid">
-        <div class="media container">
-            <div class="media-body">
-                <h3 class="media-heading">ABOUT</h3>
-                <hr>
-                <p>
-                    OOO "Airtechnic" asd asd as das da das das das das da as das dasd as das das dasd as d
-                    OOO "Airtechnic" asd asd as das da das das das das da as das dasd as das das dasd as d
-                    OOO "Airtechnic" asd asd as das da das das das das da as das dasd as das das dasd as d
-                    OOO "Airtechnic" asd asd as das da das das das das da as das dasd as das das dasd as d
-                    OOO "Airtechnic" asd asd as das da das das das das da as das dasd as das das dasd as d
-                    OOO "Airtechnic" asd asd as das da das das das das da as das dasd as das das dasd as d
-                    OOO "Airtechnic" asd asd as das da das das das das da as das dasd as das das dasd as d
-                    OOO "Airtechnic" asd asd as das da das das das das da as das dasd as das das dasd as d
-                </p>
-            </div>
-            <div class="media-right">
-                <img src="{{ asset('resources/picture.png') }}" class="img-circle" alt="PICTURE 1"
-                     style="background-color: white; padding: 16px;">
-            </div>
-        </div>
+    <div class="container-fluid text-center">
+        <br>
+        <h2>ABOUT US</h2>
+        <hr class="hr">
     </div>
 
     <div class="container-fluid text-center" style="background-color: #eee">
