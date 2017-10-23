@@ -38,7 +38,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        Airtec
+                        <i class="fa fa-rocket" aria-hidden="true"></i> Airtec
                     </a>
                 </div>
 

@@ -1,7 +1,44 @@
 @extends('layouts.app')
 
+@section('style')
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+            color: #2196F3;  /*Sets the text hover color on navbar*/
+            /*background-color: white;*/
+        }
+
+        .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
+        a:hover, .navbar-default .navbar-nav > .active > a:focus {
+            color: #2196F3; /*BACKGROUND color for active*/
+            /*background-color: #2196F3;*/
+        }
+
+        .navbar-default .navbar-nav > li > a {
+            color: black;
+        }
+
+        .navbar-default {
+            background-color: white;
+            border: none;
+            box-shadow: 0px 0px 5px #888888;
+        }
+
+        .jumbotron{
+            margin: 50px 0 0 0;
+            background-color: #03A9F4;
+            color: white;
+        }
+    </style>
+@endsection
+
 @section('content')
-    <div class="jumbotron text-center" style="margin: 50px 0 0 0">
+    <div class="jumbotron text-center">
         <h1>AIRTEC.UZ</h1>
         <h2>LOREM IPSUM!</h2>
         <a class="btn btn-default">СДЕЛАТЬ ЗАКАЗ</a>
