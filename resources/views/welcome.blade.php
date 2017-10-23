@@ -59,6 +59,17 @@
         .card:hover {
             box-shadow: 0 0 10px #AAA;
         }
+
+        #services {
+            background-color: #f8f8f8;
+        }
+
+        #services > hr {
+            width: 200px;
+            height: 3px;
+            background-color: #FF5722;
+        }
+
     </style>
 @endsection
 
@@ -72,9 +83,13 @@
     </div>
 
     <div class="container-fluid text-center" id="catalogues">
-        <div class="row">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
             <div class="col-md-4">
-                <div class=" col-md-8 col-md-offset-2 card">
+                <div class="col-md-10 col-md-offset-1 card">
                     {{--<img src="{{ asset('resources/picture.png') }}" alt="PICTURE 1">--}}
                     <i class="fa fa-skyatlas" style="font-size: 128px;"></i>
                     <br>
@@ -87,7 +102,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class=" col-md-8 col-md-offset-2 card">
+                <div class=" col-md-10 col-md-offset-1 card">
                     {{--<img src="{{ asset('resources/picture.png') }}" alt="PICTURE 1">--}}
                     <i class="fa fa-skyatlas" style="font-size: 128px;"></i>
                     <br>
@@ -100,7 +115,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class=" col-md-8 col-md-offset-2 card">
+                <div class=" col-md-10 col-md-offset-1 card">
                     {{--<img src="{{ asset('resources/picture.png') }}" alt="PICTURE 1">--}}
                     <i class="fa fa-skyatlas" style="font-size: 128px;"></i>
                     <br>
@@ -113,68 +128,55 @@
                 </div>
             </div>
         </div>
+        <br>
+        <br>
         <a class="btn pulse">SHOW CATALOGUE</a>
         <br>
         <br>
     </div>
 
-    <div class="container-fluid text-center" style="background-color: #eee">
+    <div class="container-fluid text-center" id="services">
+        <br>
         <h2>SERVICES</h2>
+        <hr>
         <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="img-circle" style="font-size: 4em;">
-                        <span class="glyphicon glyphicon-user"></span>
-                    </div>
-                    <h4>LOREM IPSUM</h4>
-                </div>
-                <div class="col-md-3">
-                    <div class="img-circle" style="font-size: 4em;">
-                        <span class="glyphicon glyphicon-user"></span>
-                    </div>
-                    <h4>LOREM IPSUM</h4>
-                </div>
-                <div class="col-md-3">
-                    <div class="img-circle" style="font-size: 4em;">
-                        <span class="glyphicon glyphicon-user"></span>
-                    </div>
-                    <h4>LOREM IPSUM</h4>
-                </div>
-                <div class="col-md-3">
-                    <div class="img-circle" style="font-size: 4em;">
-                        <span class="glyphicon glyphicon-user"></span>
-                    </div>
-                    <h4>LOREM IPSUM</h4>
-                </div>
+            <div class="col-md-4 text-left">
+                    <ul>
+                        <li>Сервисное обслуживание винтовых компрессоров</li>
+                        <li>Монтаж и техническое обслуживание винтовых компрессоров</li>
+                        <li>Ремонт и Модернизация винтовых компрессоров</li>
+                        <li>Обнуление счетчиков на панели управления</li>
+                        <li>Ремонт Винтовых блоков</li>
+                        <li>Замена компрессорного масла</li>
+                        <li>Проверка работы термостата</li>
+                    </ul>
             </div>
-            <br>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="img-circle" style="font-size: 4em;">
-                        <span class="glyphicon glyphicon-user"></span>
-                    </div>
-                    <h4>LOREM IPSUM</h4>
-                </div>
-                <div class="col-md-3">
-                    <div class="img-circle" style="font-size: 4em;">
-                        <span class="glyphicon glyphicon-user"></span>
-                    </div>
-                    <h4>LOREM IPSUM</h4>
-                </div>
-                <div class="col-md-3">
-                    <div class="img-circle" style="font-size: 4em;">
-                        <span class="glyphicon glyphicon-user"></span>
-                    </div>
-                    <h4>LOREM IPSUM</h4>
-                </div>
-                <div class="col-md-3">
-                    <div class="img-circle" style="font-size: 4em;">
-                        <span class="glyphicon glyphicon-user"></span>
-                    </div>
-                    <h4>LOREM IPSUM</h4>
-                </div>
+            <div class="col-md-4 text-left">
+                <ul>
+                    <li>Чистка внешних поверхностей модулей охлаждения масла и воздуха</li>
+                    <li>Проверка электромагнитных клапанов</li>
+                    <li>Настройка панели управления</li>
+                    <li>Комплексная замена Воздушных Фильтров, Масленых Фильтров и Сепараторов (Внешние и Погружные)</li>
+                    <li>Смазка подшипников электродвигателя</li>
+                    <li>Замена ремкомплекта впускного клапана</li>
+                    <li>Замена клапана минимального давления</li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-left">
+                <ul>
+                    <li>Замена клапана термостата</li>
+                    <li>Замена ремней, рукавов высоком давления</li>
+                    <li>Замена уплотнения вала с втулкой</li>
+                    <li>Замена подшипников валов</li>
+                    <li>Продувка радиатора, воздушного фильтра и других частей компрессора</li>
+                    <li>Ремонт и замена магистральных фильтров</li>
+                    <li>Промывка и очистка радиатора и теплообменника</li>
+                </ul>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
     </div>
 
     <div class="container-fluid">
