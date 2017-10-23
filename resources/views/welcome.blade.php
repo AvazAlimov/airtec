@@ -9,14 +9,14 @@
         }
 
         .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-            color: #2196F3;  /*Sets the text hover color on navbar*/
+            color: #00B0FF; /*Sets the text hover color on navbar*/
             /*background-color: white;*/
         }
 
         .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
         a:hover, .navbar-default .navbar-nav > .active > a:focus {
-            color: #2196F3; /*BACKGROUND color for active*/
-            /*background-color: #2196F3;*/
+            color: #00B0FF; /*BACKGROUND color for active*/
+            /*background-color: #00B0FF;*/
         }
 
         .navbar-default .navbar-nav > li > a {
@@ -26,44 +26,96 @@
         .navbar-default {
             background-color: white;
             border: none;
-            box-shadow: 0px 0px 5px #888888;
+            box-shadow: 0 0 5px #888888;
         }
 
-        .jumbotron{
+        .jumbotron {
             margin: 50px 0 0 0;
-            background-color: #03A9F4;
+            background-color: #00B0FF;
             color: white;
+        }
+
+        .pulse {
+            background-color: #FF5722;
+            color: white;
+            border-radius: 20px;
+            width: 150px;
+        }
+
+        #catalogues {
+            background-image: linear-gradient(top, #00B0FF, #00B0FF 50%, transparent 50%, transparent 100%);
+            background-image: -webkit-linear-gradient(top, #00B0FF, #00B0FF 50%, transparent 50%, transparent 100%)
+        }
+
+        .card {
+            box-shadow: 0 0 5px #AAA;
+            background-color: white;
+            border-radius: 2px;
+            padding: 24px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .card:hover {
+            box-shadow: 0 0 10px #AAA;
         }
     </style>
 @endsection
 
 @section('content')
     <div class="jumbotron text-center">
-        <h1>AIRTEC.UZ</h1>
-        <h2>LOREM IPSUM!</h2>
-        <a class="btn btn-default">СДЕЛАТЬ ЗАКАЗ</a>
+        <h1>AIRTEC <i class="fa fa-skyatlas"></i> UZ</h1>
+        <br>
+        <h4>There are some things money can't buy. For everything else, <br> there's MasterCard.</h4>
+        <br>
+        <a class="btn pulse">Over to you</a>
     </div>
 
-    <div class="container-fluid text-center">
-        <h2>OUR CATALOGUE!</h2>
+    <div class="container-fluid text-center" id="catalogues">
         <div class="row">
             <div class="col-md-4">
-                <img src="{{ asset('resources/picture.png') }}" class="img-circle" alt="PICTURE 1"
-                     style="background-color: white; padding: 16px;">
-                <h4>LOREM IPSUM</h4>
+                <div class=" col-md-8 col-md-offset-2 card">
+                    {{--<img src="{{ asset('resources/picture.png') }}" alt="PICTURE 1">--}}
+                    <i class="fa fa-skyatlas" style="font-size: 128px;"></i>
+                    <br>
+                    <br>
+                    <h4>LOREM IPSUM</h4>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s.
+                    </p>
+                </div>
             </div>
             <div class="col-md-4">
-                <img src="{{ asset('resources/picture.png') }}" class="img-circle" alt="PICTURE 1"
-                     style="background-color: white; padding: 16px;">
-                <h4>LOREM IPSUM</h4>
+                <div class=" col-md-8 col-md-offset-2 card">
+                    {{--<img src="{{ asset('resources/picture.png') }}" alt="PICTURE 1">--}}
+                    <i class="fa fa-skyatlas" style="font-size: 128px;"></i>
+                    <br>
+                    <br>
+                    <h4>LOREM IPSUM</h4>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s.
+                    </p>
+                </div>
             </div>
             <div class="col-md-4">
-                <img src="{{ asset('resources/picture.png') }}" class="img-circle" alt="PICTURE 1"
-                     style="background-color: white; padding: 16px;">
-                <h4>LOREM IPSUM</h4>
+                <div class=" col-md-8 col-md-offset-2 card">
+                    {{--<img src="{{ asset('resources/picture.png') }}" alt="PICTURE 1">--}}
+                    <i class="fa fa-skyatlas" style="font-size: 128px;"></i>
+                    <br>
+                    <br>
+                    <h4>LOREM IPSUM</h4>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s.
+                    </p>
+                </div>
             </div>
         </div>
-        <a class="btn btn-default">SHOW CATALOGUE</a>
+        <a class="btn pulse">SHOW CATALOGUE</a>
+        <br>
+        <br>
     </div>
 
     <div class="container-fluid text-center" style="background-color: #eee">
