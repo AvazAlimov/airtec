@@ -26,4 +26,6 @@ Route::prefix('home')->group(function() {
     Route::post('tag/create', 'TagController@create')->name('tag.create.submit');
     Route::post('tag/update', 'TagController@update')->name('tag.update');
     Route::post('tag/delete{id}', 'TagController@delete')->name('tag.delete');
+
+    Route::post('product/create', 'ProductController@create')->name('product.create.submit');
 });
