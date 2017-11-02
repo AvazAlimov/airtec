@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -23,7 +24,15 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->price = $request->price;
         $product->info = $request->info;
-        $product->image = $request->image;
+        $product->image = "";
+
+        $files = $request->file('image');
+
+        if($files != null)
+            foreach ($files as $image) {
+                Storage::put($image->getClientOriginalName(), file_get_contents($image));
+                $product->image .= $image->getClientOriginalName().";";
+            }
 
         $product->save();
 
