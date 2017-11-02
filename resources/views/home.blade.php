@@ -73,7 +73,7 @@
                         <div class="col-md-12 form-group">
                             <label for="product_image" class="col-md-2 control-label">Images:</label>
                             <div class="col-md-10">
-                                <input type="file" id="product_image" name="image" multiple>
+                                <input type="file" id="product_image" name="image" accept="image/*" multiple>
                             </div>
                         </div>
 
