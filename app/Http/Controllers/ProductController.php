@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Point;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -41,6 +42,13 @@ class ProductController extends Controller
             }
 
         $product->save();
+
+        foreach ($request->tags as $tag) {
+            $point = new Point;
+            $point->tag_id = $tag;
+            $point->product_id = $product->id;
+            $point->save();
+        }
 
         return redirect()->intended(route('home'));
     }

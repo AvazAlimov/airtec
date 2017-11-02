@@ -77,12 +77,19 @@
                             </div>
                         </div>
 
-                        <div>
-
+                        <div class="col-md-12 form-group">
+                            <label for="product_tag" class="col-md-2 control-label">Images:</label>
+                            <div class="col-md-10">
+                                <select class="form-control" multiple data-role="tagsinput" id="product_tag" name="tags[]">
+                                    @foreach($tags as $tag)
+                                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <input type="submit" class="btn btn-success">
+                        <input type="submit" class="btn btn-success" value="Submit">
                     </div>
                 </div>
             </form>
