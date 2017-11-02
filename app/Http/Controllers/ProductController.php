@@ -52,4 +52,11 @@ class ProductController extends Controller
 
         return redirect()->intended(route('home'));
     }
+
+    public function delete($id)
+    {
+        $product = Product::find($id);
+        $product->delete();
+        return redirect()->intended(route('home'));
+    }
 }

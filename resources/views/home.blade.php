@@ -30,7 +30,7 @@
     <div class="container">
         <div id="section1" class="section" style="display: none;">
             <br>
-            <form action="{{ route('product.create.submit') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('product.create') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -94,12 +94,33 @@
                 </div>
             </form>
 
-
+            <h3 class="page-header">ALL TAGS</h3>
+            @foreach($products as $product)
+                <div class="row">
+                    <div class="col-md-10 col-xs-7">
+                        <h4>{{ $product->name }}</h4>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <button type="button" class="btn btn-warning">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <form action="{{ route('product.delete', $product->id) }}" method="post">
+                            {{ csrf_field() }}
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+            @endforeach
         </div>
 
         <div id="section2" class="section" style="display: none;">
             <br>
-            <form action="{{ route('tag.create.submit') }}" method="POST">
+            <form action="{{ route('tag.create') }}" method="POST">
                 {{ csrf_field() }}
                 <div class="panel panel-default">
                     <div class="panel-heading">

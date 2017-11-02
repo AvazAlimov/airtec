@@ -23,9 +23,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('home')->group(function() {
-    Route::post('tag/create', 'TagController@create')->name('tag.create.submit');
+    Route::post('tag/create', 'TagController@create')->name('tag.create');
     Route::post('tag/update', 'TagController@update')->name('tag.update');
     Route::post('tag/delete{id}', 'TagController@delete')->name('tag.delete');
 
-    Route::post('product/create', 'ProductController@create')->name('product.create.submit');
+    Route::post('product/create', 'ProductController@create')->name('product.create');
+    Route::post('product/delete{id}', 'ProductController@delete')->name('product.delete');
 });
