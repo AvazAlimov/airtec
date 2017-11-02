@@ -106,7 +106,8 @@
                         </button>
                     </div>
                     <div class="col-md-1 col-xs-2">
-                        <form action="{{ route('product.delete', $product->id) }}" method="post">
+                        <form action="{{ route('product.delete', $product->id) }}" method="post"
+                              onsubmit="return confirm('Delete?');">
                             {{ csrf_field() }}
                             <button type="submit" class="btn btn-danger">
                                 <i class="fa fa-trash"></i>
