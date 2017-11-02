@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="col-md-12 form-group">
-                            <label for="product_tag" class="col-md-2 control-label">Images:</label>
+                            <label for="product_tag" class="col-md-2 control-label">Tags:</label>
                             <div class="col-md-10">
                                 <select class="form-control" multiple data-role="tagsinput" id="product_tag" name="tags[]">
                                     @foreach($tags as $tag)
