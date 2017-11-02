@@ -14,7 +14,12 @@ class CreatePointsTable extends Migration
     public function up()
     {
         Schema::create('points', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('tag_id')->unsigned();
+            $table->integer('product_id')->unsigned();
+
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->primary(['tag_id','product_id']);
             $table->timestamps();
         });
     }
