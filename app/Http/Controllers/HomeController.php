@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Tag;
+use App\Product;
 
 class HomeController extends Controller
 {
@@ -25,8 +25,11 @@ class HomeController extends Controller
     public function index()
     {
         $tags = Tag::all();
+        $products = Product::all();
 
+        /** @noinspection PhpUndefinedMethodInspection */
         return view('home')
-            ->withTags($tags);
+            ->withTags($tags)
+            ->withProducts($products);
     }
 }
