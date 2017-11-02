@@ -28,10 +28,16 @@ class ProductController extends Controller
 
         $files = $request->file('image');
 
-        if($files != null)
+        if ($files != null)
             foreach ($files as $image) {
-                Storage::put($image->getClientOriginalName(), file_get_contents($image));
-                $product->image .= $image->getClientOriginalName().";";
+                try {
+                    /** @noinspection PhpUndefinedMethodInspection */
+                    Storage::put($image->getClientOriginalName(), file_get_contents($image));
+                    /** @noinspection PhpUndefinedMethodInspection */
+                    $product->image .= $image->getClientOriginalName() . ";";
+                } catch (\Exception $e) {
+                    return $e->getMessage();
+                }
             }
 
         $product->save();
