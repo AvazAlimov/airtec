@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Point;
+use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -58,5 +59,15 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->delete();
         return redirect()->intended(route('home'));
+    }
+
+    public function show($id)
+    {
+        $product = Product::findOrFail($id);
+        $tags = Tag::all();
+
+        return view('product')
+            ->withProduct($product)
+            ->withTags($tags);
     }
 }

@@ -101,9 +101,11 @@
                         <h4>{{ $product->name }}</h4>
                     </div>
                     <div class="col-md-1 col-xs-2">
-                        <button type="button" class="btn btn-warning">
-                            <i class="fa fa-pencil"></i>
-                        </button>
+                        <form action="{{ route('product.show', $product->id) }}" method="get">
+                            <button type="submit" class="btn btn-warning">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                        </form>
                     </div>
                     <div class="col-md-1 col-xs-2">
                         <form action="{{ route('product.delete', $product->id) }}" method="post"
