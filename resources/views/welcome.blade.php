@@ -64,6 +64,11 @@
             background-color: #f8f8f8;
         }
 
+        #map {
+            margin: 0 auto;
+            height: 500px;
+        }
+
         .hr {
             width: 200px;
             height: 3px;
@@ -180,7 +185,7 @@
         <br>
     </div>
 
-    <div class="container-fluid text-center">
+    <div class="container-fluid text-center" style="padding: 0">
         <br>
         <h2>ABOUT US</h2>
         <hr class="hr">
@@ -230,8 +235,32 @@
     </div>
 
     <div class="footer" style="background-color: #2a2a2a">
+        <div id="map">
+        </div>
         <br>
         <br>
         <br>
     </div>
+@endsection
+
+@section('script')
+    <script src="https://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function init(){
+            myMap = new ymaps.Map("map", {
+                center: [41.353389, 69.256734],
+                zoom: 14,
+                controls: []
+            });
+            myMap.geoObjects.add(new ymaps.Placemark([41.353389, 69.256734], {
+                balloonContent: 'Наш Офис'
+            }, {
+                preset: 'islands#redHomeIcon',
+                iconColor: '#F44336'
+            }));
+        }
+
+        ymaps.ready(init);
+    </script>
 @endsection
