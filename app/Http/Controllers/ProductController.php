@@ -65,10 +65,12 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $tags = Tag::all();
-        $points = Point::where()
+        $points = Point::select('tag_id')->where('product_id', '=', $product->id)->get();
 
+        /** @noinspection PhpUndefinedMethodInspection */
         return view('product')
             ->withProduct($product)
-            ->withTags($tags);
+            ->withTags($tags)
+            ->withPoints($points);
     }
 }

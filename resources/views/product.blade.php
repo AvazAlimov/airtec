@@ -66,7 +66,13 @@
                         <div class="col-md-10">
                             <select class="form-control" multiple data-role="tagsinput" id="product_tag" name="tags[]">
                                 @foreach($tags as $tag)
-                                    <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                    <option value="{{ $tag->id }}" {{ $points->contains($tag) ? "selected" : " " }}
+                                        @foreach($points as $point)
+                                            @if($point->tag_id == $tag->id)
+                                                selected
+                                            @endif
+                                        @endforeach
+                                    >{{ $tag->name }}</option>
                                 @endforeach
                             </select>
                         </div>
