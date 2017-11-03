@@ -65,6 +65,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $tags = Tag::all();
+        $points = Point::where()
 
         return view('product')
             ->withProduct($product)

@@ -2,10 +2,6 @@
 
 @section('style')
     <style>
-        .navs {
-            padding: 0 10px 0 10px;
-        }
-
         .control-label {
             margin-top: 8px;
         }
@@ -13,8 +9,11 @@
 @endsection
 
 @section('content')
-    <div class="container">
-        <br>
+    <div class="container" style="margin-top: 70px;">
+        <h2>
+            {{ sizeof(explode(";", $product->image, -1)) }}
+        </h2>
+        <h3>{{ storage_path('app\\'.explode(";", $product->image, -1)[0]) }}</h3>
         <form action="{{ route('product.create') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="panel panel-default">
@@ -26,7 +25,7 @@
                         <label for="product_name" class="col-md-2 control-label">Name:</label>
                         <div class="col-md-10">
                             <input id="product_name" type="text" class="form-control" name="name"
-                                   value="{{ old('name') }}" required autofocus>
+                                   value="{{ $product->name }}" required autofocus>
                             @if ($errors->has('name'))
                                 <span class="help-block">
 	                                        <strong>{{ $errors->first('name') }}</strong>
@@ -39,7 +38,7 @@
                         <label for="product_price" class="col-md-2 control-label">Price:</label>
                         <div class="col-md-10">
                             <input id="product_price" type="number" class="form-control" name="price"
-                                   value="{{ old('price') }}" required autofocus>
+                                   value="{{ $product->price }}" required autofocus>
                             @if ($errors->has('price'))
                                 <span class="help-block">
 	                                        <strong>{{ $errors->first('price') }}</strong>
@@ -51,7 +50,7 @@
                     <div class="col-md-12 form-group">
                         <label for="product_info" class="col-md-2 control-label">Information:</label>
                         <div class="col-md-10">
-                            <textarea id="product_info" class="form-control" name="info"></textarea>
+                            <textarea id="product_info" class="form-control" name="info">{{ $product->info }}</textarea>
                         </div>
                     </div>
 
