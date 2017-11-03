@@ -27,7 +27,6 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->info = $request->info;
         $product->image = "";
-
         $files = $request->file('image');
 
         if ($files != null)
@@ -64,7 +63,34 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->name = $request->name;
         $product->price = $request->price;
+        $product->info = $request->info;
+        $product->image = "";
+        $files = $request->file('image');
 
+        if ($files != null)
+            foreach ($files as $image) {
+                try {
+                    /** @noinspection PhpUndefinedMethodInspection */
+                    Storage::put($image->getClientOriginalName(), file_get_contents($image));
+                    /** @noinspection PhpUndefinedMethodInspection */
+                    $product->image .= $image->getClientOriginalName() . ";";
+                } catch (\Exception $e) {
+                    return $e->getMessage();
+                }
+            }
+
+        Point::where('product_id', '=', $product->id)->delete();
+
+        foreach ($request->tags as $tag) {
+            $point = new Point;
+            $point->tag_id = $tag;
+            $point->product_id = $product->id;
+            $point->save();
+        }
+
+        $product->save();
+
+        return redirect()->intended(route('home'));
     }
 
     public function delete($id)

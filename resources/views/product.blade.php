@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="container" style="margin-top: 70px;">
-        <form action="{{ route('product.update') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('product.update', $product->id) }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -75,7 +75,7 @@
                     </div>
 
                     <div class="col-md-12 form-group">
-                        <input type="text" class="form-control" name="oldImages" value="{{ $product->image }}" title="">
+                        <input type="hidden" class="form-control" name="oldImages" value="{{ $product->image }}">
                     </div>
                 </div>
                 <div class="panel-footer">
