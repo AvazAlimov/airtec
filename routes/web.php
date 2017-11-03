@@ -29,5 +29,6 @@ Route::prefix('home')->group(function() {
 
     Route::post('product/create', 'ProductController@create')->name('product.create');
     Route::post('product/delete{id}', 'ProductController@delete')->name('product.delete');
+    Route::post('product/update{id}', 'ProductController@update')->name('product.update');
     Route::get('product/show={id}', 'ProductController@show')->name('product.show');
 });

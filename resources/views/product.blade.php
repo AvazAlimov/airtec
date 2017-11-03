@@ -10,11 +10,7 @@
 
 @section('content')
     <div class="container" style="margin-top: 70px;">
-        <h2>
-            {{ sizeof(explode(";", $product->image, -1)) }}
-        </h2>
-        <h3>{{ storage_path('app\\'.explode(";", $product->image, -1)[0]) }}</h3>
-        <form action="{{ route('product.create') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('product.update') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -55,7 +51,7 @@
                     </div>
 
                     <div class="col-md-12 form-group">
-                        <label for="product_image" class="col-md-2 control-label">Images:</label>
+                        <label for="product_image" class="col-md-2 control-label">New images:</label>
                         <div class="col-md-10">
                             <input type="file" id="product_image" name="image[]" accept="image/*" multiple>
                         </div>
@@ -76,6 +72,10 @@
                                 @endforeach
                             </select>
                         </div>
+                    </div>
+
+                    <div class="col-md-12 form-group">
+                        <input type="text" class="form-control" name="oldImages" value="{{ $product->image }}" title="">
                     </div>
                 </div>
                 <div class="panel-footer">

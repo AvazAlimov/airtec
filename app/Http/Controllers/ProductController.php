@@ -54,6 +54,19 @@ class ProductController extends Controller
         return redirect()->intended(route('home'));
     }
 
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required'
+        ]);
+
+        $product = Product::findOrFail($id);
+        $product->name = $request->name;
+        $product->price = $request->price;
+
+    }
+
     public function delete($id)
     {
         $product = Product::find($id);
