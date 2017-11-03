@@ -80,7 +80,6 @@ class ProductController extends Controller
         $tags = Tag::all();
         $points = Point::select('tag_id')->where('product_id', '=', $product->id)->get();
 
-        /** @noinspection PhpUndefinedMethodInspection */
         return view('product')
             ->withProduct($product)
             ->withTags($tags)
