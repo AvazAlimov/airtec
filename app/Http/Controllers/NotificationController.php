@@ -15,8 +15,6 @@ class NotificationController extends Controller
         $message->contact = $request->contact;
         $message->comment = $request->comment;
 
-        dd($message);
-
         $message->notify(new CommentNotification());
         return redirect()->route('/');
     }
