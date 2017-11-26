@@ -145,7 +145,7 @@
             </div>
         </div>
         <br>
-        <a class="btn pulse">SHOW CATALOGUE</a>
+        <a class="btn pulse">ПОКАЗАТЬ КАТАЛОГ</a>
         <br>
         <br>
         <br>
@@ -153,7 +153,7 @@
 
     <div id="services" class="container-fluid text-center">
         <br>
-        <h2>SERVICES</h2>
+        <h2>СЕРВИСЫ</h2>
         <hr class="hr">
         <br>
         <div class="container">
@@ -198,7 +198,7 @@
 
     <div id="about" class="container-fluid text-center" style="padding: 0">
         <br>
-        <h2>ABOUT US</h2>
+        <h2>О НАС</h2>
         <hr class="hr">
         <div class="container" style="text-align: center">
             <div class="row">

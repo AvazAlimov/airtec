@@ -53,11 +53,11 @@
                         <!-- Authentication Links -->
 
                         @guest
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#catalogues">Catalogue</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contacts</a></li>
+                            <li><a href="#">ГЛАВНАЯ</a></li>
+                            <li><a href="#catalogues">КАТАЛОГ</a></li>
+                            <li><a href="#services">СЕРВИСЫ</a></li>
+                            <li><a href="#about">О НАС</a></li>
+                            <li><a href="#contact">КОНТАКТЫ</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
