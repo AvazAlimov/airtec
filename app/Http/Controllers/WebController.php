@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\Product;
 use Illuminate\Http\Request;
 use App\Notifications\CommentNotification;
 
@@ -15,7 +16,16 @@ class WebController extends Controller
 
     public function catalogue()
     {
-        return view('catalogue');
+        $products = Product::all();
+        foreach ($products as $product)
+        {
+            $string = $product->image;
+            $images = explode(';', $string);
+            array_pop($images);
+            $product->images = $images;
+        }
+//        dd($products);
+        return view('catalogue')->withProducts($products);
     }
 
     public function comment(Request $request)

@@ -33,7 +33,8 @@ class ProductController extends Controller
             foreach ($files as $image) {
                 try {
                     /** @noinspection PhpUndefinedMethodInspection */
-                    Storage::put($image->getClientOriginalName(), file_get_contents($image));
+                    $image->move(public_path('images/'), $image->getClientOriginalName());
+//                    Storage::put($image->getClientOriginalName(), file_get_contents($image));
                     /** @noinspection PhpUndefinedMethodInspection */
                     $product->image .= $image->getClientOriginalName() . ";";
                 } catch (\Exception $e) {
