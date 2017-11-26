@@ -2,7 +2,7 @@
 
 @section('style')
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-
+    <!--suppress CssUnusedSymbol -->
     <style>
         body {
             font-family: 'Rubik', sans-serif;
@@ -13,8 +13,7 @@
             /*background-color: white;*/
         }
 
-        .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
-        a:hover, .navbar-default .navbar-nav > .active > a:focus {
+        .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
             color: #00B0FF; /*BACKGROUND color for active*/
             /*background-color: #00B0FF;*/
         }
@@ -354,6 +353,7 @@
 
 @section('script')
     <script src="https://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
+    <!--suppress JSUnusedLocalSymbols, JSUnresolvedVariable, JSUnresolvedFunction -->
     <script>
         function myMap() {
             let myCenter = new google.maps.LatLng(41.353389, 69.256734);
