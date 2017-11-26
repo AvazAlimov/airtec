@@ -21,6 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/comment', 'NotificationController@comment')->name('comment.create');
 
 Route::prefix('home')->group(function() {
     Route::post('tag/create', 'TagController@create')->name('tag.create');

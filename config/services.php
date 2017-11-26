@@ -35,4 +35,7 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'telegram-bot-api' => [
+        'token' => env('490125150:AAETnAxwyo9xDA3MCCsdIyfQGBtadPu7StI', '490125150:AAETnAxwyo9xDA3MCCsdIyfQGBtadPu7StI')
+    ],
 ];

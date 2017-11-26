@@ -275,36 +275,36 @@
                 <hr>
                 <table>
                     <tbody>
-                        <tr>
-                            <td>
-                                <h4><strong>Адрес:</strong></h4>
-                            </td>
-                            <td>
-                                <h4>100174 Уста Ширин ул. 116, Ташкент, Узбекистан</h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4><strong>Телефон:</strong></h4>
-                            </td>
-                            <td>
-                                <h4>+99890-9188427 (Telegram)</h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <h4>+99897-772 84 27</h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4><strong>Эл. адрес:&emsp;</strong></h4>
-                            </td>
-                            <td>
-                                <h4>sales@airtechnic.uz <br> info@airtechnic.uz</h4>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>
+                            <h4><strong>Адрес:</strong></h4>
+                        </td>
+                        <td>
+                            <h4>100174 Уста Ширин ул. 116, Ташкент, Узбекистан</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4><strong>Телефон:</strong></h4>
+                        </td>
+                        <td>
+                            <h4>+99890-9188427 (Telegram)</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h4>+99897-772 84 27</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4><strong>Эл. адрес:&emsp;</strong></h4>
+                        </td>
+                        <td>
+                            <h4>sales@airtechnic.uz <br> info@airtechnic.uz</h4>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
                 <hr>
@@ -327,7 +327,8 @@
                 <h2>Связаться с нами</h2>
                 <p>Обязательные для заполнения поля помечены знаком *.</p>
 
-                <form action="">
+                <form action="{{ route('comment.create') }}" method="post">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name">Ваше имя:</label>
                         <input type="text" id="name" class="form-control" name="name" required>
@@ -355,14 +356,13 @@
 
 @section('script')
     <script src="https://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
-
     <script>
         function myMap() {
             let myCenter = new google.maps.LatLng(41.353389, 69.256734);
             let mapCanvas = document.getElementById("map");
             let mapOptions = {center: myCenter, zoom: 15};
             let map = new google.maps.Map(mapCanvas, mapOptions);
-            let marker = new google.maps.Marker({position:myCenter});
+            let marker = new google.maps.Marker({position: myCenter});
             marker.setMap(map);
         }
     </script>
