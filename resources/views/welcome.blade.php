@@ -36,10 +36,11 @@
         }
 
         .pulse {
-            background-color: #FF5722;
+            background-color: #2196F3;
             color: white;
-            border-radius: 20px;
-            width: 150px;
+            border-radius: 0;
+            min-width: 150px;
+            font-size: 20px;
         }
 
         #catalogues {
@@ -69,12 +70,19 @@
             height: 500px;
         }
 
+        #services {
+            background: rgba(0, 0, 0, 0) url("https://www.toptal.com/designers/subtlepatterns/patterns/cream_pixels.png") repeat scroll 0 0;
+        }
+
         .hr {
             width: 200px;
             height: 3px;
-            background-color: #FF5722;
+            background-color: #2196F3;
         }
 
+        #contact {
+            padding: 0;
+        }
     </style>
 @endsection
 
@@ -82,15 +90,12 @@
     <div class="jumbotron text-center">
         <h1>AIRTEC <i class="fa fa-skyatlas"></i> UZ</h1>
         <br>
-        <h4>There are some things money can't buy. For everything else, <br> there's MasterCard.</h4>
+        <h2>Ремонт и Сервисное Обслуживание Воздушно Винтовых Компрессоров и Осушителей</h2>
         <br>
-        <a class="btn pulse">Over to you</a>
+        <a class="btn pulse">Заказать</a>
     </div>
 
-    <div class="container-fluid text-center" id="catalogues">
-        <br>
-        <br>
-        <br>
+    <div id="catalogues" class="container-fluid text-center">
         <br>
         <div class="container">
             <div class="col-md-4">
@@ -99,10 +104,13 @@
                     <i class="fa fa-skyatlas" style="font-size: 128px;"></i>
                     <br>
                     <br>
-                    <h4>LOREM IPSUM</h4>
+                    <h4>Воздушные Фильтры</h4>
+                    <hr>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s.
+                        Воздушный фильтр является важнейшим элементом не только в компрессорном оборудовании, но и в
+                        других видах оборудования эксплуатируемого в различных отраслях.
+                        <br>
+                        <br>
                     </p>
                 </div>
             </div>
@@ -112,10 +120,12 @@
                     <i class="fa fa-skyatlas" style="font-size: 128px;"></i>
                     <br>
                     <br>
-                    <h4>LOREM IPSUM</h4>
+                    <h4>Масляные Фильтры</h4>
+                    <hr>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s.
+                        Сложно себе представить оборудование, которое работало бы без масляного и без воздушного
+                        фильтров. Масляные, как и воздушные, фильтры выпускаются в больших объемах и для разного
+                        оборудования.
                     </p>
                 </div>
             </div>
@@ -125,142 +135,236 @@
                     <i class="fa fa-skyatlas" style="font-size: 128px;"></i>
                     <br>
                     <br>
-                    <h4>LOREM IPSUM</h4>
+                    <h4>Сепараторы</h4>
+                    <hr>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s.
+                        Использование циклонных сепараторов преимущественно заметно на винтовых компрессорах.
+                        Наша компания может предложить сепараторы на любые компрессоры, любых производителей.
                     </p>
                 </div>
             </div>
         </div>
-        <br>
         <br>
         <a class="btn pulse">SHOW CATALOGUE</a>
         <br>
         <br>
+        <br>
     </div>
 
-    <div class="container-fluid text-center" id="services">
+    <div id="services" class="container-fluid text-center">
         <br>
         <h2>SERVICES</h2>
         <hr class="hr">
+        <br>
         <div class="container">
-            <div class="col-md-4 text-left">
-                <ul>
-                    <li>Сервисное обслуживание винтовых компрессоров</li>
-                    <li>Монтаж и техническое обслуживание винтовых компрессоров</li>
-                    <li>Ремонт и Модернизация винтовых компрессоров</li>
-                    <li>Обнуление счетчиков на панели управления</li>
-                    <li>Ремонт Винтовых блоков</li>
-                    <li>Замена компрессорного масла</li>
-                    <li>Проверка работы термостата</li>
-                </ul>
+            <div class="col-md-4">
+                <div class=" col-md-10 col-md-offset-1">
+                    <img src="{{ asset('resources/service_1.svg') }}" alt="PICTURE 1" style=" width: 128px;">
+                    <br>
+                    <br>
+                    <h4>ПРЕДПРОЕКТНОЕ ОБСЛЕДОВАНИЕ</h4>
+                    <p>
+                        Для квалифицированного подбора и монтажа оборудования, в некоторых ситуациях, требуется выезд
+                        специалиста
+                    </p>
+                </div>
             </div>
-            <div class="col-md-4 text-left">
-                <ul>
-                    <li>Чистка внешних поверхностей модулей охлаждения масла и воздуха</li>
-                    <li>Проверка электромагнитных клапанов</li>
-                    <li>Настройка панели управления</li>
-                    <li>Комплексная замена Воздушных Фильтров, Масленых Фильтров и Сепараторов (Внешние и Погружные)
-                    </li>
-                    <li>Смазка подшипников электродвигателя</li>
-                    <li>Замена ремкомплекта впускного клапана</li>
-                    <li>Замена клапана минимального давления</li>
-                </ul>
+            <div class="col-md-4">
+                <div class=" col-md-10 col-md-offset-1">
+                    <img src="{{ asset('resources/service_2.svg') }}" alt="PICTURE 1" style=" width: 128px;">
+                    <br>
+                    <br>
+                    <h4>ПУСКОНАЛАДОЧНЫЕ РАБОТЫ</h4>
+                    <p>
+                        Монтаж и запуск оборудования, обучение персонала
+                    </p>
+                </div>
             </div>
-            <div class="col-md-4 text-left">
-                <ul>
-                    <li>Замена клапана термостата</li>
-                    <li>Замена ремней, рукавов высоком давления</li>
-                    <li>Замена уплотнения вала с втулкой</li>
-                    <li>Замена подшипников валов</li>
-                    <li>Продувка радиатора, воздушного фильтра и других частей компрессора</li>
-                    <li>Ремонт и замена магистральных фильтров</li>
-                    <li>Промывка и очистка радиатора и теплообменника</li>
-                </ul>
+            <div class="col-md-4">
+                <div class=" col-md-10 col-md-offset-1">
+                    <img src="{{ asset('resources/service_3.svg') }}" alt="PICTURE 1" style=" width: 128px;">
+                    <br>
+                    <br>
+                    <h4>ГАРАНТИЙНОЕ И ПОСЛЕ ГАРАНТИЙНОЕ ОБСЛУЖИВАНИЕ</h4>
+                    <p>
+                        Диагностика, технический акт осмотра
+                    </p>
+                </div>
             </div>
         </div>
         <br>
         <br>
-        <br>
     </div>
 
-    <div class="container-fluid text-center" style="padding: 0">
+    <div id="about" class="container-fluid text-center" style="padding: 0">
         <br>
         <h2>ABOUT US</h2>
         <hr class="hr">
-        <div class="container text-left">
-            <p>
-                ООО «AirTechnic» основанная в 2015 г. группой профессиональных инженеров в городе Ташкенте,
-                специализируется на вопросах снабжения сжатым воздухом и сервисным центром для широкого спектра
-                предприятий работающих в различных отраслях народного хозяйства.
-            </p>
-            <h3>
-                Компания осуществляет обслуживание и ремонт:
-            </h3>
-            <ul>
-                <li>Компрессорного оборудования, включая передвижные винтовые компрессора</li>
-                <li>Оборудования для подготовки сжатого воздуха, расходомеры потока сжатого воздуха</li>
-                <li>Поршневых компрессоров</li>
-            </ul>
-            <p>
-                В нашем распоряжении имеется оснащенная ремонтная база, существенный запас необходимых запчастей и
-                расходных материалов.
-                <br>
-                <br>
-                В нашей компании работают только подготовленные высококвалифицированные специалисты, прошедшие обучение
-                и последующую аттестацию на заводах-производителях.
-                <br>
-                <br>
-                Именно такой подход к работе позволяет нам гарантировать качественное и быстрое сервисное обслуживание,
-                а так же ремонт компрессоров, холодильного и другого промышленного оборудования.
-            </p>
+        <div class="container" style="text-align: center">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class=" col-md-10 col-md-offset-1">
+                        <img src="{{ asset('resources/about_1.svg') }}" alt="PICTURE 1" style=" width: 96px;">
+                        <h4>Качественная продукция</h4>
+                        <p style="text-align: justify;">
+                            Мы предоставляем нашим заказчикам только проверенные и испытанные на практике комплектующие
+                            и
+                            расходные материалы.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class=" col-md-10 col-md-offset-1">
+                        <img src="{{ asset('resources/about_2.svg') }}" alt="PICTURE 1" style=" width: 96px;">
+                        <h4>Большой Ассортимент</h4>
+                        <p style="text-align: justify;">
+                            Ассортимент продукции "AirTechnic" позволяет предложить всевозможные дополнительные запчасти
+                            и
+                            комплектующие.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class=" col-md-10 col-md-offset-1">
+                        <img src="{{ asset('resources/about_3.svg') }}" alt="PICTURE 1" style=" width: 96px;">
+                        <h4>Сервисная Служба</h4>
+                        <p style="text-align: justify">
+                            Собственная сервисная служба сопровождает клиента на всём протяжении использования
+                            оборудования
+                            и действует на всей территории Республики Узбекистан.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row col-md-9 col-md-offset-1">
+                <div class="col-md-6">
+                    <div class=" col-md-10 col-md-offset-1">
+                        <img src="{{ asset('resources/about_4.svg') }}" alt="PICTURE 1" style=" width: 96px;">
+                        <h4>Низкие Цены</h4>
+                        <p style="text-align: justify">
+                            Работая напрямую с заводами изготовителями и странах Европы н Азии, наша компания может
+                            предложить для своих заказчиков самые низкие цены.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class=" col-md-10 col-md-offset-1">
+                        <img src="{{ asset('resources/about_5.svg') }}" alt="PICTURE 1" style=" width: 96px;">
+                        <h4>Работа с регионами </h4>
+                        <p style="text-align: justify">
+                            Наша компания работаем во многих областях Республики Узбекистан и имеет хорошую репутацию
+                            среди
+                            заказчиков и клиентов.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
+        <br>
+        <br>
     </div>
 
-    <div class="container-fluid text-center" style="background-color: #eee">
-        <div class="row text-left">
-            <div class="col-md-6">
-                <h2>CONTACTS</h2>
-                <h3>Address</h3>
-                <p>Tashkent, Mirzo-Ulugbek, Ziyolilar, 9</p>
-                <h3>Phone</h3>
-                <p>+99871 255 55 55</p>
-                <h3>Mobile</h3>
-                <p>+99897 777 77 77</p>
-            </div>
-            <div class="col-md-6" style="background-color: white; height: 300px;">
-            </div>
-        </div>
-    </div>
-
-    <div class="footer" style="background-color: #2a2a2a">
+    <div id="contact" class="container-fluid text-center">
         <div id="map">
         </div>
-        <br>
-        <br>
-        <br>
+        <div class="container text-left">
+            <br>
+            <div class="col-md-6">
+                <h2>КОНТАКТЫ</h2>
+                <hr>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h4><strong>Адрес:</strong></h4>
+                            </td>
+                            <td>
+                                <h4>100174 Уста Ширин ул. 116, Ташкент, Узбекистан</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4><strong>Телефон:</strong></h4>
+                            </td>
+                            <td>
+                                <h4>+99890-9188427 (Telegram)</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <h4>+99897-772 84 27</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4><strong>Эл. адрес:&emsp;</strong></h4>
+                            </td>
+                            <td>
+                                <h4>sales@airtechnic.uz <br> info@airtechnic.uz</h4>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3>СОЦИАЛЬНОЕ</h3>
+                <br>
+                <a href="https://www.facebook.com/">
+                    <img src="{{ asset('resources/facebook.svg') }}" style="width: 32px;">
+                </a>
+                <a href="https://plus.google.com/">
+                    <img src="{{ asset('resources/google-plus.svg') }}" style="width: 32px;">
+                </a>
+                <a href="https://twitter.com/">
+                    <img src="{{ asset('resources/twitter.svg') }}" style="width: 32px;">
+                </a>
+                <a href="https://news.yandex.ru/?redircnt=1511691921.1">
+                    <img src="{{ asset('resources/rss.svg') }}" style="width: 32px;">
+                </a>
+            </div>
+            <div class="col-md-6" style="background-color: white; height: 300px;">
+                <h2>Связаться с нами</h2>
+                <p>Обязательные для заполнения поля помечены знаком *.</p>
+
+                <form action="">
+                    <div class="form-group">
+                        <label for="name">Ваше имя:</label>
+                        <input type="text" id="name" class="form-control" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact">Телефон или E-mail: *</label>
+                        <input type="text" id="contact" class="form-control" name="contact" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">Заявка:</label>
+                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+
+                    <input type="submit" class="btn btn-info" style="background-color: #389fe8" value="Отправить">
+                    <br>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
     </div>
 @endsection
 
 @section('script')
     <script src="https://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
 
-    <script type="text/javascript">
-        function init(){
-            myMap = new ymaps.Map("map", {
-                center: [41.353389, 69.256734],
-                zoom: 14,
-                controls: []
-            });
-            myMap.geoObjects.add(new ymaps.Placemark([41.353389, 69.256734], {
-                balloonContent: 'Наш Офис'
-            }, {
-                preset: 'islands#redHomeIcon',
-                iconColor: '#F44336'
-            }));
+    <script>
+        function myMap() {
+            let myCenter = new google.maps.LatLng(41.353389, 69.256734);
+            let mapCanvas = document.getElementById("map");
+            let mapOptions = {center: myCenter, zoom: 15};
+            let map = new google.maps.Map(mapCanvas, mapOptions);
+            let marker = new google.maps.Marker({position:myCenter});
+            marker.setMap(map);
         }
-
-        ymaps.ready(init);
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 @endsection
