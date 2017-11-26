@@ -54,11 +54,11 @@
                         <!-- Authentication Links -->
 
                         @guest
-                            <li><a href="#">ГЛАВНАЯ</a></li>
-                            <li><a href="#catalogues">КАТАЛОГ</a></li>
-                            <li><a href="#services">СЕРВИСЫ</a></li>
-                            <li><a href="#about">О НАС</a></li>
-                            <li><a href="#contact">КОНТАКТЫ</a></li>
+                            <li id="nav1"><a href="#">ГЛАВНАЯ</a></li>
+                            <li id="nav2"><a href="#catalogues">КАТАЛОГ</a></li>
+                            <li id="nav3"><a href="#services">СЕРВИСЫ</a></li>
+                            <li id="nav4"><a href="#about">О НАС</a></li>
+                            <li id="nav5"><a href="#contact">КОНТАКТЫ</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -86,6 +86,7 @@
         </nav>
 
         @yield('content')
+
     </div>
 
     <!-- Scripts -->
