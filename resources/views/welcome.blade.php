@@ -91,7 +91,7 @@
         <br>
         <h2>Ремонт и Сервисное Обслуживание Воздушно Винтовых Компрессоров и Осушителей</h2>
         <br>
-        <a class="btn pulse">Заказать</a>
+        <a class="btn pulse" href="{{ route('catalogue') }}">Заказать</a>
     </div>
 
     <div id="catalogues" class="container-fluid text-center">
@@ -144,7 +144,7 @@
             </div>
         </div>
         <br>
-        <a class="btn pulse">ПОКАЗАТЬ КАТАЛОГ</a>
+        <a class="btn pulse" href="{{ route('catalogue') }}">ПОКАЗАТЬ КАТАЛОГ</a>
         <br>
         <br>
         <br>

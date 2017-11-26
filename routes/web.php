@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'WebController@welcome')->name('welcome');
+Route::get('/catalogue', 'WebController@catalogue')->name('catalogue');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/comment', 'WebController@comment')->name('comment.create');
 

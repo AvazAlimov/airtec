@@ -13,6 +13,11 @@ class WebController extends Controller
         return view('welcome');
     }
 
+    public function catalogue()
+    {
+        return view('catalogue');
+    }
+
     public function comment(Request $request)
     {
         $message = new Message();
