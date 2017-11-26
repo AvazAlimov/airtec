@@ -33,10 +33,9 @@ class CommentNotification extends Notification
 
     public function toTelegram($message)
     {
-        dd($message);
         return TelegramMessage::create()
             ->to(-225853152)
-            ->content("*Связаться с нами*\n*ИМЯ:* ".$message->name."\n*КОНТАКТЫ:* ".$message->contact."\n*СОДЕРЖАНИЕ:*".$message->comment);
+            ->content("*СВЯЗАТЬСЯ С НАМИ*\n*ИМЯ:* ".$message->name."\n*КОНТАКТЫ:* ".$message->contact."\n*СОДЕРЖАНИЕ:* ".$message->comment);
     }
 
     /**

@@ -16,6 +16,6 @@ class NotificationController extends Controller
         $message->comment = $request->comment;
 
         $message->notify(new CommentNotification());
-        return redirect()->route('/');
+        return view('welcome');
     }
 }
