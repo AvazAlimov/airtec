@@ -330,15 +330,13 @@
                 <form action="{{ route('comment.create') }}" method="post">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="name">Ваше имя:</label>
+                        <label for="name">* Ваше имя:</label>
                         <input type="text" id="name" class="form-control" name="name" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="contact">Телефон или E-mail: *</label>
+                        <label for="contact">* Телефон или E-mail:</label>
                         <input type="text" id="contact" class="form-control" name="contact" required>
                     </div>
-
                     <div class="form-group">
                         <label for="comment">Заявка:</label>
                         <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
