@@ -341,7 +341,7 @@
 
                     <div class="form-group">
                         <label for="comment">Заявка:</label>
-                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                        <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
                     </div>
 
                     <input type="submit" class="btn btn-info" style="background-color: #389fe8" value="Отправить">

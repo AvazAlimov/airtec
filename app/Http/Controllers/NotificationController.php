@@ -11,9 +11,13 @@ class NotificationController extends Controller
     public function comment(Request $request)
     {
         $message = new Message();
-        $message->content = $request->comment;
+        $message->name = $request->name;
+        $message->contact = $request->contact;
+        $message->comment = $request->comment;
+
+        dd($message);
 
         $message->notify(new CommentNotification());
-        return redirect()->route('home');
+        return redirect()->route('/');
     }
 }

@@ -31,11 +31,11 @@ class CommentNotification extends Notification
         return [TelegramChannel::class];
     }
 
-    public function toTelegram($comment)
+    public function toTelegram($message)
     {
         return TelegramMessage::create()
-            ->to(-225853152)// Optional.
-            ->content("*Грузоперевозка - Новый Заказ!*\n");
+            ->to(-225853152)
+            ->content("*Связаться с нами*\n**ИМЯ:* " . $message->name . "\n*КОНТАКТЫ:* " . $message->contact . "\n*СОДЕРЖАНИЕ:*" .$message->comment);
     }
 
     /**
