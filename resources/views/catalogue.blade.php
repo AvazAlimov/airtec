@@ -7,6 +7,7 @@
         }
 
         .card {
+            margin-bottom: 16px;
             padding: 0;
             box-shadow: 0 0 5px #AAA;
             background-color: white;
@@ -58,7 +59,6 @@
                         <p style="height: 132px; overflow: hidden; text-align: justify; padding: 16px;"> {{ $product->info }} </p>
                         <a class="btn" style="margin-bottom: 16px;">Показать</a>
                     </div>
-                    <br>
                 </div>
             @endforeach
         </div>
