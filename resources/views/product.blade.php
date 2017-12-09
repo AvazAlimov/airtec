@@ -51,9 +51,19 @@
                     </div>
                     <div>
                         @if($product->images != null)
-                            @foreach($product->images as $file)
-                                <img style="width: 256px;" src="{{ asset($file->path.$file->file) }}">
-                            @endforeach
+                            @for($i=0; $i<$product->images->count(); $i+=3)
+                                <div class="row">
+                                    @for($j=$i; $j<=$i+2 && $j<$product->images->count(); $j++)
+                                        <div class="col-sm-3">
+                                            <a href="{{route('image.delete', $product->images[$j]->id)}}"
+                                               onclick="return confirm('Вы уверены')" class="btn btn-sm btn-danger"
+                                               style="position: absolute;">X</a>
+                                            <img class="img-responsive img-thumbnail"
+                                                 src="{!!asset($product->images[$j]->path. $product->images[$j]->file)!!}"/>
+                                        </div>
+                                    @endfor
+                                </div>
+                            @endfor
                         @endif
                         <div>
 

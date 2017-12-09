@@ -30,4 +30,5 @@ Route::prefix('home')->group(function() {
     Route::post('product/delete{id}', 'ProductController@delete')->name('product.delete');
     Route::post('product/update{id}', 'ProductController@update')->name('product.update');
     Route::get('product/show={id}', 'ProductController@show')->name('product.show');
+    Route::get('product/image/delete/{id}','ProductController@deleteFile')->name('image.delete');
 });

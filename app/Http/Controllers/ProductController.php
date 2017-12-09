@@ -108,4 +108,9 @@ class ProductController extends Controller
             ->withTags($tags)
             ->withPoints($points);
     }
+    public function deleteFile($id){
+        $file = File::find($id);
+        LaravelFile::delete(public_path().$file->path.$file->file);
+        return redirect()->back();
+    }
 }
