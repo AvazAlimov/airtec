@@ -87,11 +87,11 @@ class ProductController extends Controller
     public function delete($id)
     {
         $product = Product::find($id);
-        foreach ($product->files as $file) {
-            LaravelFile::delete(public_path().$product->file->path.$product->file->file);
+        foreach ($product->images as $file) {
+            LaravelFile::delete(public_path().$file->path.$file->file);
         }
         $tags = $product->tags()->detach();
-        $product->files->delete();
+        $product->images()->delete();
 
         $product->delete();
         return redirect()->intended(route('home'));
@@ -111,6 +111,7 @@ class ProductController extends Controller
     public function deleteFile($id){
         $file = File::find($id);
         LaravelFile::delete(public_path().$file->path.$file->file);
+        $file->delete();
         return redirect()->back();
     }
 }
