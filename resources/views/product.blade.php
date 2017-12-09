@@ -49,37 +49,48 @@
                             <textarea id="product_info" class="form-control" name="info">{{ $product->info }}</textarea>
                         </div>
                     </div>
+                    <div>
+                        @if($product->images != null)
+                            @foreach($product->images as $file)
+                                <img style="width: 256px;" src="{{ asset($file->path.$file->file) }}">
+                            @endforeach
+                        @endif
+                        <div>
 
-                    <div class="col-md-12 form-group">
-                        <label for="product_image" class="col-md-2 control-label">New images:</label>
-                        <div class="col-md-10">
-                            <input type="file" id="product_image" name="image[]" accept="image/*" multiple>
-                        </div>
-                    </div>
+                            <div class="col-md-12 form-group">
+                                <label for="product_image" class="col-md-2 control-label">New images:</label>
+                                <div class="col-md-10">
+                                    <input type="file" id="product_image" name="files[]" accept="image/*" multiple>
+                                </div>
+                            </div>
 
-                    <div class="col-md-12 form-group">
-                        <label for="product_tag" class="col-md-2 control-label">Tags:</label>
-                        <div class="col-md-10">
-                            <select class="form-control" multiple data-role="tagsinput" id="product_tag" name="tags[]">
-                                @foreach($tags as $tag)
-                                    <option value="{{ $tag->id }}" {{ $points->contains($tag) ? "selected" : " " }}
-                                        @foreach($points as $point)
-                                            @if($point->tag_id == $tag->id)
-                                                selected
-                                            @endif
+                            <div class="col-md-12 form-group">
+                                <label for="product_tag" class="col-md-2 control-label">Tags:</label>
+                                <div class="col-md-10">
+                                    <select class="form-control" multiple data-role="tagsinput" id="product_tag"
+                                            name="tags[]">
+                                        @foreach($tags as $tag)
+                                            <option value="{{ $tag->id }}"
+                                                    {{ $points->contains($tag) ? "selected" : " " }}
+                                                    @foreach($points as $point)
+                                                    @if($point->tag_id == $tag->id)
+                                                    selected
+                                                    @endif
+                                                    @endforeach
+                                            >{{ $tag->name }}</option>
                                         @endforeach
-                                    >{{ $tag->name }}</option>
-                                @endforeach
-                            </select>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 form-group">
+                                <input type="hidden" class="form-control" name="oldImages">
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <input type="submit" class="btn btn-success" value="Submit">
                         </div>
                     </div>
-
-                    <div class="col-md-12 form-group">
-                        <input type="hidden" class="form-control" name="oldImages" value="{{ $product->image }}">
-                    </div>
-                </div>
-                <div class="panel-footer">
-                    <input type="submit" class="btn btn-success" value="Submit">
                 </div>
             </div>
         </form>
