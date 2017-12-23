@@ -17,24 +17,18 @@ class WebController extends Controller
     public function catalogue()
     {
         $products = Product::all();
-        foreach ($products as $product)
-        {
-            $string = $product->image;
-            $images = explode(';', $string);
-            array_pop($images);
-            $product->images = $images;
-        }
-//        dd($products);
+      
         return view('catalogue')->withProducts($products);
     }
 
     public function comment(Request $request)
     {
-        $message = new Message();
-        $message->name = $request->name;
-        $message->contact = $request->contact;
-        $message->comment = $request->comment;
-
+        $request->validate([
+           'name'=>'required',
+           'contact'=>'required' 
+        ]);
+        $message = new Message($request->all());
+        $message->save();
         $message->notify(new CommentNotification());
         return redirect()->route('welcome');
     }

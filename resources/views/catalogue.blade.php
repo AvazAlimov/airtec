@@ -48,12 +48,14 @@
             @foreach($products as $product)
                 <div class="col-md-4">
                     <div class="col-md-10 col-md-offset-1 card">
-                        @if(!empty($product->images))
+                        @if(count($product->images) != 0)
                             <div class="image col-md-12"
-                                 style="background-image: url({{ asset('images/'.$product->images[0]) }});"></div>
+                                 style="background-image: url('{{asset($product->getFirstImage())}}');">
+                             </div>                             
                         @else
-                            <div class="image col-md-12"
-                                 style="background-image: url({{ asset('resources/product.svg') }});"></div>
+                        <h1></h1>
+                            <div class="image col-md-12" style="background-image: url({{ asset('resources/product.svg') }});">
+                            </div>
                         @endif
                         <h4><strong>Цена:</strong> {{ $product->price }} сум</h4>
                         <p style="height: 132px; overflow: hidden; text-align: justify; padding: 16px;"> {{ $product->info }} </p>

@@ -29,15 +29,6 @@ class ProductController extends Controller
 
         $product = new Product($request->except('files'));
 
-        /*if ($files != null)
-            foreach ($files as $image) {
-            try {
-                $image->move(public_path('images/'), $image->getClientOriginalName());
-                $product->image .= $image->getClientOriginalName() . ";";
-            } catch (\Exception $e) {
-                return $e->getMessage();
-            }
-        }*/
         $product->save();
          if ($request->file('files') != null) {
             $file = $request->file('files');

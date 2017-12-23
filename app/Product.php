@@ -14,6 +14,11 @@ class Product extends Model
     {
         return $this->morphMany('App\File', 'fileable');
     }
+    public function getFirstImage()
+    {
+        $file = $this->images()->first();
+        return $file->path.$file->file;
+    }
 	public function tags()
     {
         return $this->belongsToMany('App\Tag','points');
