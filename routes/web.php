@@ -19,7 +19,7 @@ Auth::routes();
 Route::get('/', 'WebController@welcome')->name('welcome');
 Route::get('/catalogue', 'WebController@catalogue')->name('catalogue');
 Route::get('/catalogue/search', 'WebController@search')->name('search');
-Route::get('/product/show/{id}', 'WebController@show')->name('product.show');
+Route::get('/product/page/{id}', 'WebController@show')->name('product.page');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/comment', 'WebController@comment')->name('comment.create');
 
