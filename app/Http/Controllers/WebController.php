@@ -55,6 +55,14 @@ class WebController extends Controller
         return view('catalogue')->withProducts($products);
     }
     public function show($id){
-        return view('showProduct')->withProduct(Product::findOrFail($id));
+        $product = Product::findOrFail($id);
+        $product->view_count = $product->view_count + 1;
+        $product->total_count = $product->view_count + $product->order_count;
+        $product->save();
+        return view('showProduct')->withProduct($product);
+    }
+    public function order(Request $request, $id){
+        $product = Product::findOrFail($id);
+
     }
 }

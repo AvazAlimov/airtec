@@ -120,7 +120,6 @@
                 <hr>
             @endforeach
         </div>
-
         <div id="section2" class="section" style="display: none;">
             <br>
             <form action="{{ route('tag.create') }}" method="POST">
@@ -208,13 +207,43 @@
                 <hr>
             @endforeach
         </div>
-
         <div id="section3" class="section" style="display: none;">
+            <div class="chart-container" style="position: relative; height:30vh; width:60vw">
+                <canvas id="topProducts"></canvas>
+            </div>
         </div>
     </div>
 @endsection
 
 @section('script')
+    <script src="{{asset('js/Chart.js')}}"></script>
+    <script>
+        var products_name = {!! $topprod !!}
+
+        var ctx = document.getElementById("topProducts").getContext("2d");
+        var topProducts = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                datasets: [{
+                    label: 'Top Products',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor:'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
     <script>
         function switchSection(id) {
             document.cookie = "adminPage=" + id + ";";
