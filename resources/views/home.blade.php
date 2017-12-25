@@ -80,7 +80,8 @@
                         <div class="col-md-12 form-group">
                             <label for="product_tag" class="col-md-2 control-label">Tags:</label>
                             <div class="col-md-10">
-                                <select class="form-control" multiple data-role="tagsinput" id="product_tag" name="tags[]">
+                                <select class="form-control" multiple data-role="tagsinput" id="product_tag"
+                                        name="tags[]">
                                     @foreach($tags as $tag)
                                         <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                                     @endforeach
@@ -208,40 +209,23 @@
             @endforeach
         </div>
         <div id="section3" class="section" style="display: none;">
-            <div class="chart-container" style="position: relative; height:30vh; width:60vw">
-                <canvas id="topProducts"></canvas>
+            <div class="container center">
+                <div class="col-md-6 col-md-offset-3">
+                    <label for="tag_chooser"></label>
+                    <select id="tag_chooser" class="form-control">
+
+                    </select>
+                </div>
+                <div class="chart-container">
+                    <canvas id="topProducts"></canvas>
+                </div>
             </div>
         </div>
     </div>
 @endsection
 
 @section('script')
-    <script src="{{asset('js/Chart.js')}}"></script>
-    <script>
-        let ctx = document.getElementById("topProducts").getContext("2d");
-        let topProducts = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-                datasets: [{
-                    label: 'Top Products',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-    </script>
+    <script src="{{asset('js/Chart.min.js')}}"></script>
     <script>
         function switchSection(id) {
             document.cookie = "adminPage=" + id + ";";
@@ -275,6 +259,30 @@
             switchSection(getCookie("adminPage"));
             let navs = document.getElementsByClassName("navs");
             navs[getCookie("adminPage").replace("section", "") - 1].className = "navs active";
-        }
+        };
+
+        let ctx = document.getElementById("topProducts").getContext("2d");
+        let topProducts = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                datasets: [{
+                    label: 'Top Products',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
     </script>
 @endsection
