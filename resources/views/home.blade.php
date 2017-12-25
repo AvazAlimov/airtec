@@ -218,10 +218,8 @@
 @section('script')
     <script src="{{asset('js/Chart.js')}}"></script>
     <script>
-        var products_name = {!! $topprod !!}
-
-        var ctx = document.getElementById("topProducts").getContext("2d");
-        var topProducts = new Chart(ctx, {
+        let ctx = document.getElementById("topProducts").getContext("2d");
+        let topProducts = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -229,7 +227,7 @@
                     label: 'Top Products',
                     data: [12, 19, 3, 5, 2, 3],
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor:'rgba(54, 162, 235, 1)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
                 }]
             },
@@ -237,7 +235,7 @@
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero:true
+                            beginAtZero: true
                         }
                     }]
                 }
@@ -247,21 +245,21 @@
     <script>
         function switchSection(id) {
             document.cookie = "adminPage=" + id + ";";
-            var section = document.getElementsByClassName('section');
-            for (var i = 0; i < section.length; i++)
+            let section = document.getElementsByClassName('section');
+            for (let i = 0; i < section.length; i++)
                 section[i].style.display = "none";
             document.getElementById(id).style.display = "block";
         }
 
         function getCookie(cname) {
-            var name = cname + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') {
                     c = c.substring(1);
                 }
-                if (c.indexOf(name) == 0) {
+                if (c.indexOf(name) === 0) {
                     return c.substring(name.length, c.length);
                 }
             }
@@ -275,7 +273,7 @@
 
         window.onload = function () {
             switchSection(getCookie("adminPage"));
-            var navs = document.getElementsByClassName("navs");
+            let navs = document.getElementsByClassName("navs");
             navs[getCookie("adminPage").replace("section", "") - 1].className = "navs active";
         }
     </script>

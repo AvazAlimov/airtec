@@ -25,13 +25,14 @@ class HomeController extends Controller
     public function index()
     {
         $tags = Tag::all();
-        $top_products= Tag::find(1)->products()->orderBy('total_count', 'desc')->take(5)->get();
+//        $top_products= Tag::find(1)->products()->orderBy('total_count', 'desc')->take(5)->get();
 
         $products = Product::all();
 
         /** @noinspection PhpUndefinedMethodInspection */
         return view('home')
             ->withTags($tags)
-            ->withProducts($products)->withTopprod($top_products);
+            ->withProducts($products);
+//            ->withTopprod($top_products);
     }
 }
