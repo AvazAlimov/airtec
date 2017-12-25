@@ -66,9 +66,24 @@
                 <div class="col-md-4">
                     <h1>{{ $product->name }}</h1>
                     <hr>
-                    <h3><strong>Tag: @foreach($product->tags as $tag)</strong>
+                    <h3><strong>CATEGORIES: @foreach($product->tags as $tag)</strong>
                         <span class="badge badge-pill badge-defaul">{{ $tag->name}}</span> @endforeach </h3>
-                    <h3><strong>Price: </strong>{{ $product->price }} sum</h3>
+                    <h3><strong>PRICE: </strong>{{ $product->price }} sum</h3>
+                    <h3><strong>MAKE ORDER</strong></h3>
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <input type="text" placeholder="name" class="form-control" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="phone" class="form-control" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" placeholder="number" min="0" class="form-control" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" placeholder="phone" class="btn" value="MAKE ORDER"/>
+                        </div>
+                    </form>
                 </div>
             </div>
             <br>
