@@ -36,10 +36,6 @@ class DbTableSeed extends Seeder
             $product->price = random_int(1,20);
             $product->info = $faker->paragraph(6);
             $product->save();
-            $file = new File;
-            $file->file= "Faktur.png";
-            $file->path = "/images/img2/";
-            $product->images()->save($file);
         }
         foreach (range(1,10) as $i){
             $product = new Tag;

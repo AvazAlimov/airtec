@@ -16,8 +16,8 @@ class WebController extends Controller
 
     public function catalogue()
     {
-        $products = Product::all();
-      
+        $products = Product::paginate(9);
+
         return view('catalogue')->withProducts($products);
     }
 
