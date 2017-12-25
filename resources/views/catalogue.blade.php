@@ -58,7 +58,7 @@
                         @endif
                         <h4><strong>Цена:</strong> {{ $product->price }} сум</h4>
                         <p style="height: 132px; overflow: hidden; text-align: justify; padding: 16px;"> {{ $product->info }} </p>
-                        <a class="btn" style="margin-bottom: 16px;">Показать</a>
+                        <a class="btn" style="margin-bottom: 16px;" href="{{route('product.page', $product->id)}}">Показать</a>
                     </div>
                 </div>
             @endforeach
