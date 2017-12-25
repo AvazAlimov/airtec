@@ -75,13 +75,13 @@
                             <input type="text" placeholder="name" class="form-control" required/>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="phone" class="form-control" required/>
+                            <input type="text" placeholder="+998 (9X) XXX-XX-XX" class="form-control phone" required/>
                         </div>
                         <div class="form-group">
                             <input type="number" placeholder="number" min="0" class="form-control" required/>
                         </div>
                         <div class="form-group">
-                            <input type="submit" placeholder="phone" class="btn" value="MAKE ORDER"/>
+                            <input type="submit" placeholder="phone" class="btn btn-block" value="MAKE ORDER"/>
                         </div>
                     </form>
                 </div>
@@ -93,4 +93,18 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script src="{{ asset('/js/jquery.mask.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.phone').mask('+AAB (00) 000-00-00', {
+                'translation': {
+                    A: {pattern: /[9]/},
+                    B: {pattern: /[8]/}
+                }
+            });
+        });
+    </script>
 @endsection
