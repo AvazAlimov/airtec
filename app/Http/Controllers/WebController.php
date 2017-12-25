@@ -54,4 +54,7 @@ class WebController extends Controller
         }
         return view('catalogue')->withProducts($products);
     }
+    public function show($id){
+        return view('showProduct')->withProduct(Product::findOrFail($id));
+    }
 }
