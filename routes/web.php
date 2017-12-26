@@ -20,6 +20,7 @@ Route::get('/', 'WebController@welcome')->name('welcome');
 Route::get('/catalogue', 'WebController@catalogue')->name('catalogue');
 Route::get('/catalogue/search', 'WebController@search')->name('search');
 Route::get('/product/page/{id}', 'WebController@show')->name('product.page');
+Route::post('/product/order/{id}','WebController@order')->name('product.order');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/comment', 'WebController@comment')->name('comment.create');
 

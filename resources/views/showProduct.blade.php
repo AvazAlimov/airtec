@@ -70,18 +70,19 @@
                         <span class="badge badge-pill badge-defaul">{{ $tag->name}}</span> @endforeach </h3>
                     <h3><strong>PRICE: </strong>{{ $product->price }} sum</h3>
                     <h3><strong>MAKE ORDER</strong></h3>
-                    <form action="" method="POST">
+                    <form action="{{route('product.order', $product->id)}}" method="POST">
+                        {{csrf_field()}}
                         <div class="form-group">
-                            <input type="text" placeholder="name" class="form-control" required/>
+                            <input type="text" placeholder="name" class="form-control" name="name" required/>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="+998 (9X) XXX-XX-XX" class="form-control phone" required/>
+                            <input type="text" placeholder="+998 (9X) XXX-XX-XX" name="phone" class="form-control phone" required/>
                         </div>
                         <div class="form-group">
-                            <input type="number" placeholder="number" min="0" class="form-control" required/>
+                            <input type="number" placeholder="number" min="0" name="number" class="form-control" required/>
                         </div>
                         <div class="form-group">
-                            <input type="submit" placeholder="phone" class="btn btn-block" value="MAKE ORDER"/>
+                            <input type="submit" class="btn btn-block" value="MAKE ORDER"/>
                         </div>
                     </form>
                 </div>

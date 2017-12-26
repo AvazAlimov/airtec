@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\Order;
 use App\Product;
+use App\Tag;
 use Illuminate\Http\Request;
 use App\Notifications\CommentNotification;
 
@@ -17,8 +19,8 @@ class WebController extends Controller
     public function catalogue()
     {
         $products = Product::paginate(9);
-
-        return view('catalogue')->withProducts($products);
+        $tags = Tag::all();
+        return view('catalogue')->withProducts($products)->withTags($tags);
     }
 
     public function comment(Request $request)
@@ -62,7 +64,16 @@ class WebController extends Controller
         return view('showProduct')->withProduct($product);
     }
     public function order(Request $request, $id){
+        $request->validate([
+           'name' => 'required',
+            'phone' => 'required',
+            'number' =>'required'
+        ]);
         $product = Product::findOrFail($id);
+        $order = new Order($request->all());
+        $order->product_id = $product->id;
+        $order->save();
 
+        return redirect()->back()->with('message', "Sizning so'rovingiz qabul qilindi, siz bilan aloqaga chiqamiz");
     }
 }

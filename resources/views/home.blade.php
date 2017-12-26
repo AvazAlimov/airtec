@@ -213,7 +213,9 @@
                 <div class="col-md-6 col-md-offset-3">
                     <label for="tag_chooser"></label>
                     <select id="tag_chooser" class="form-control">
-
+                    @foreach($tags as $tag)
+                        <option value="{{$tag->id}}"> {{$tag->name}}</option>
+                    @endforeach
                     </select>
                 </div>
                 <div class="chart-container">
@@ -260,7 +262,9 @@
             let navs = document.getElementsByClassName("navs");
             navs[getCookie("adminPage").replace("section", "") - 1].className = "navs active";
         };
+        function chooseTag(id) {
 
+        }
         let ctx = document.getElementById("topProducts").getContext("2d");
         let topProducts = new Chart(ctx, {
             type: 'bar',
