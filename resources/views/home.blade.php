@@ -166,8 +166,8 @@
                                                    value="{{ old('name') }}" required autofocus>
                                             @if ($errors->has('name'))
                                                 <span class="help-block">
-	                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
+	                                                <strong>{{ $errors->first('name') }}</strong>
+                                                </span>
                                             @endif
                                         </div>
                                         <input id="updated_id" type="hidden" name="id">
@@ -212,10 +212,10 @@
             <div class="container center">
                 <div class="col-md-6 col-md-offset-3">
                     <label for="tag_chooser"></label>
-                    <select id="tag_chooser" class="form-control">
-                    @foreach($tags as $tag)
-                        <option value="{{$tag->id}}"> {{$tag->name}}</option>
-                    @endforeach
+                    <select id="tag_chooser" class="form-control" onchange="chooseTag(this)">
+                        @foreach($tags as $tag)
+                            <option value="{{$tag->id}}"> {{$tag->name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="chart-container">
@@ -261,32 +261,56 @@
             switchSection(getCookie("adminPage"));
             let navs = document.getElementsByClassName("navs");
             navs[getCookie("adminPage").replace("section", "") - 1].className = "navs active";
+            loadTagProducts();
         };
-        function chooseTag(id) {
 
+        let arrays = [];
+
+        function loadTagProducts() {
+            @foreach($tags as $tag)
+            arrays.push({!! $tag->products()->orderBy('total_count', 'desc')->take(5)->get() !!});
+            @endforeach
         }
-        let ctx = document.getElementById("topProducts").getContext("2d");
-        let topProducts = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-                datasets: [{
-                    label: 'Top Products',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
+
+        let topProducts = false;
+
+        function chooseTag(select) {
+            let tagProducts = arrays[select.selectedIndex];
+
+            let chart_labels = [];
+            let chart_data = [];
+
+            for (let i = 0; i < tagProducts.length; i++) {
+                chart_labels.push(tagProducts[i]['name']);
+                chart_data.push(tagProducts[i]['total_count']);
             }
-        });
+
+            if (topProducts !== false)
+                topProducts.destroy();
+
+            let ctx = document.getElementById("topProducts").getContext("2d");
+            topProducts = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: chart_labels,
+                    datasets: [{
+                        label: 'Top Products',
+                        data: chart_data,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }
     </script>
 @endsection
