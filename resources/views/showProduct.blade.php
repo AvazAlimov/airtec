@@ -45,13 +45,11 @@
                 <div class="col-md-8">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="item active"
-                                 style="background-image: url('{{ asset('resources/product.svg') }}')">
+                            @foreach($product->images as $image)
+                            <div class="item {{$loop->first ? "active" : ""}}"
+                                 style="background-image: url('{{ asset($image->path.$image->file) }}')">
                             </div>
-                            <div class="item" style="background-image: url('{{ asset('resources/product.svg') }}')">
-                            </div>
-                            <div class="item" style="background-image: url('{{ asset('resources/product.svg') }}')">
-                            </div>
+                            @endforeach
                         </div>
                         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                             <span class="glyphicon glyphicon-chevron-left"></span>
