@@ -28,7 +28,6 @@ class ProductController extends Controller
         ]);
 
         $product = new Product($request->except('files'));
-
         $product->save();
          if ($request->file('files') != null) {
             $file = $request->file('files');

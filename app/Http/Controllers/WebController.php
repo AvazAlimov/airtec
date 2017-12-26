@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\Notifications\OrderNotification;
 use App\Order;
 use App\Product;
 use App\Tag;
@@ -73,6 +74,7 @@ class WebController extends Controller
         $order = new Order($request->all());
         $order->product_id = $product->id;
         $order->save();
+        $order->notify(new OrderNotification($product));
 
         return redirect()->back()->with('message', "Sizning so'rovingiz qabul qilindi, siz bilan aloqaga chiqamiz");
     }

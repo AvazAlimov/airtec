@@ -92,7 +92,6 @@
                                     </select>
                                 </div>
                             </div>
-
                             <div class="col-md-12 form-group">
                                 <input type="hidden" class="form-control" name="oldImages">
                             </div>
