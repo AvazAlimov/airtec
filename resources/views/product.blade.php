@@ -66,7 +66,6 @@
                             @endfor
                         @endif
                         <div>
-
                             <div class="col-md-12 form-group">
                                 <label for="product_image" class="col-md-2 control-label">New images:</label>
                                 <div class="col-md-10">
@@ -96,10 +95,10 @@
                                 <input type="hidden" class="form-control" name="oldImages">
                             </div>
                         </div>
-                        <div class="panel-footer">
-                            <input type="submit" class="btn btn-success" value="Submit">
-                        </div>
                     </div>
+                </div>
+                <div class="panel-footer">
+                    <input type="submit" class="btn btn-success" value="Submit">
                 </div>
             </div>
         </form>
