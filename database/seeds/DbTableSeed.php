@@ -44,7 +44,6 @@ class DbTableSeed extends Seeder
             $product->info = $faker->paragraph(6);
             $product->view_count = random_int(0,200);
             $product->order_count = random_int(0,200);
-            $product->total_count = $product->view_count + $product->order_count;
             $product->save();
 
             $product->tags()->sync($i, false);

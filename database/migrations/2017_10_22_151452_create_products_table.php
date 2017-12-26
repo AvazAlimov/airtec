@@ -20,7 +20,6 @@ class CreateProductsTable extends Migration
             $table->text('info');
             $table->integer('view_count')->default(0);
             $table->integer('order_count')->default(0);
-            $table->integer('total_count')->default(0);
             $table->timestamps();
         });
     }

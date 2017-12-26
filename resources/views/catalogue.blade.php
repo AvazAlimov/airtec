@@ -30,14 +30,23 @@
 @section('content')
     <div class="container-fluid text-center" style="margin: 100px 0 0 0;">
         <div class="container">
-            <form action="" class="col-md-8 col-md-offset-2" method="get">
+            <form action="{{route('search')}}" class="col-md-8 col-md-offset-2" method="get">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Найти">
+                    <input type="text" name="search" class="form-control" placeholder="Найти" value="{{Request::get('search')}}">
                     <div class="input-group-btn">
                         <button class="btn btn-primary" type="submit">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </div>
+                </div>
+                <div class="input-group col-md-8 col-md-offset-2">
+                    <label for="tag"></label>
+                    <select id="tag" class="form-control" name="tag">
+                        <option disabled selected>Категория</option>
+                        @foreach($tags as $tag)
+                            <option value="{{$tag->id}}" {{Request::get('tag') == $tag->id ? "selected" : ""}}>{{$tag->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </form>
         </div>
