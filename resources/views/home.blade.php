@@ -95,7 +95,7 @@
                 </div>
             </form>
 
-            <h3 class="page-header">ALL TAGS</h3>
+            <h3 class="page-header">ALL PRODUCTS</h3>
             @foreach($products as $product)
                 <div class="row">
                     <div class="col-md-10 col-xs-7">
@@ -219,7 +219,10 @@
                     </select>
                 </div>
                 <div class="chart-container">
-                    <canvas id="topProducts"></canvas>
+                    <canvas id="topProducts_1"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="topProducts_2"></canvas>
                 </div>
             </div>
         </div>
@@ -262,40 +265,75 @@
             let navs = document.getElementsByClassName("navs");
             navs[getCookie("adminPage").replace("section", "") - 1].className = "navs active";
             loadTagProducts();
+            chooseTag(document.getElementById("tag_chooser"));
         };
 
-        let arrays = [];
+        let viewed_arrays = [];
+        let order_arrays = [];
+        let topProducts_1 = false;
+        let topProducts_2 = false;
 
         function loadTagProducts() {
             @foreach($tags as $tag)
-            arrays.push({!! $tag->products()->orderBy('total_count', 'desc')->take(5)->get() !!});
+            viewed_arrays.push({!! $tag->products()->orderBy('view_count', 'desc')->take(10)->get() !!});
+            order_arrays.push({!! $tag->products()->orderBy('order_count', 'desc')->take(10)->get() !!});
             @endforeach
         }
 
-        let topProducts = false;
 
         function chooseTag(select) {
-            let tagProducts = arrays[select.selectedIndex];
-
-            let chart_labels = [];
-            let chart_data = [];
-
-            for (let i = 0; i < tagProducts.length; i++) {
-                chart_labels.push(tagProducts[i]['name']);
-                chart_data.push(tagProducts[i]['total_count']);
+            let tagProducts_1 = viewed_arrays[select.selectedIndex];
+            let tagProducts_2 = viewed_arrays[select.selectedIndex];
+            let chart_labels_1 = [];
+            let chart_data_1 = [];
+            let chart_labels_2 = [];
+            let chart_data_2 = [];
+            for (let i = 0; i < tagProducts_1.length; i++) {
+                chart_labels_1.push(tagProducts_1[i]['name']);
+                chart_data_1.push(tagProducts_1[i]['view_count']);
+            }
+            for (let i = 0; i < tagProducts_2.length; i++) {
+                chart_labels_2.push(tagProducts_2[i]['name']);
+                chart_data_2.push(tagProducts_2[i]['order_count']);
             }
 
-            if (topProducts !== false)
-                topProducts.destroy();
+            if (topProducts_1 !== false)
+                topProducts_1.destroy();
+            if (topProducts_2 !== false)
+                topProducts_2.destroy();
 
-            let ctx = document.getElementById("topProducts").getContext("2d");
-            topProducts = new Chart(ctx, {
+            let ctx_1 = document.getElementById("topProducts_1").getContext("2d");
+            topProducts_1 = new Chart(ctx_1, {
                 type: 'bar',
                 data: {
-                    labels: chart_labels,
+                    labels: chart_labels_1,
                     datasets: [{
-                        label: 'Top Products',
-                        data: chart_data,
+                        label: 'Top Viewed Products',
+                        data: chart_data_1,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            let ctx_2 = document.getElementById("topProducts_2").getContext("2d");
+            topProducts_2 = new Chart(ctx_2, {
+                type: 'bar',
+                data: {
+                    labels: chart_labels_2,
+                    datasets: [{
+                        label: 'Top Ordered Products',
+                        data: chart_data_2,
                         backgroundColor: 'rgba(54, 162, 235, 0.2)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 1
