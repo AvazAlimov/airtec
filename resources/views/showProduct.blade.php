@@ -97,7 +97,7 @@
             <div class="row">
                 <hr>
                 <h2>Same Products</h2>
-                @foreach($offersa as $offer)
+                @foreach($offers as $offer)
                     <div class="col-md-4">
                         <div class="col-md-10 col-md-offset-1 card">
                             @if(count($offer->images) != 0)
