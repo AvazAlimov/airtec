@@ -58,6 +58,11 @@
             height: 156px;
             margin: 0 auto 16px;
         }
+        .copyright p{
+            font-family:"Century Gothic";
+            padding:15px 0 10px 0;
+
+        }
     </style>
 @endsection
 
@@ -110,10 +115,10 @@
             </div>
             <br>
             <div class="row">
-                <h3><label for="info">Information</label></h3>
+                <h3 class="text-center"><label for="info">Information</label></h3>
                 <textarea id="info" readonly>{{ $product->info }}</textarea>
             </div>
-            <div class="row">
+            <div class="row text-center">
                 <hr>
                 <h2>Same Products</h2>
                 <br>
@@ -136,6 +141,102 @@
                     </div>
                 @endforeach
             </div>
+        </div>
+    </div>
+    <div id="contact" class="container-fluid text-center" style=" box-shadow: 0 0 5px rgba(0,0,0,0.5); background-color:#F5F5F5;padding-bottom: 130px;padding-top: 50px;">
+        <div id="map">
+        </div>
+        <div class="container text-left">
+            <br>
+            <div class="col-md-6">
+                <h2>КОНТАКТЫ</h2>
+                <hr>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <h4><strong>Адрес:</strong></h4>
+                        </td>
+                        <td>
+                            <h4>100174 Уста Ширин ул. 116, Ташкент, Узбекистан</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4><strong>Телефон:</strong></h4>
+                        </td>
+                        <td>
+                            <h4>+99890-9188427 (Telegram)</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h4>+99897-772 84 27</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4><strong>Эл. адрес:&emsp;</strong></h4>
+                        </td>
+                        <td>
+                            <h4>sales@airtechnic.uz <br> info@airtechnic.uz</h4>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3>СОЦИАЛЬНОЕ</h3>
+                <br>
+                <a href="https://www.facebook.com/">
+                    <img src="{{ asset('resources/facebook.svg') }}" style="width: 32px;">
+                </a>
+                <a href="https://plus.google.com/">
+                    <img src="{{ asset('resources/google-plus.svg') }}" style="width: 32px;">
+                </a>
+                <a href="https://twitter.com/">
+                    <img src="{{ asset('resources/twitter.svg') }}" style="width: 32px;">
+                </a>
+                <a href="https://news.yandex.ru/?redircnt=1511691921.1">
+                    <img src="{{ asset('resources/rss.svg') }}" style="width: 32px;">
+                </a>
+            </div>
+            <div class="col-md-6" style=" height: 300px;">
+                <h2>Связаться с нами</h2>
+                <p>Обязательные для заполнения поля помечены знаком *.</p>
+
+                <form action="{{ route('comment.create') }}" method="post">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <label for="name">* Ваше имя:</label>
+                        <input type="text" id="name" class="form-control" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">* Телефон или E-mail:</label>
+                        <input type="text" id="contact" class="form-control" name="contact" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Заявка:</label>
+                        <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+                    </div>
+
+                    <input type="submit" class="btn btn-info" style="background-color: #389fe8" value="Отправить">
+                    <br>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="copyright" >
+        <div class="container">
+
+            <div class="text-center">
+                <p>Copyright © 2017 All rights reserved</p>
+            </div>
+
         </div>
     </div>
 @endsection
