@@ -92,35 +92,35 @@
                 <div class="col-md-4">
                     <h1>{{ $product->name }}</h1>
                     <hr>
-                    <h3><strong>CATEGORIES: @foreach($product->tags as $tag)</strong>
+                    <h3><strong>КАТЕГОРИЯ: @foreach($product->tags as $tag)</strong>
                         <span class="badge badge-pill badge-defaul">{{ $tag->name}}</span> @endforeach </h3>
-                    <h3><strong>PRICE: </strong>{{ $product->price }} sum</h3>
-                    <h3><strong>MAKE ORDER</strong></h3>
+                    <h3><strong>ЦЕНА: </strong>{{ $product->price }} sum</h3>
+                    <h3><strong>Заказать</strong></h3>
                     <form action="{{route('product.order', $product->id)}}" method="POST">
                         {{csrf_field()}}
                         <div class="form-group">
-                            <input type="text" placeholder="name" class="form-control" name="name" required/>
+                            <input type="text" placeholder="Ваше Имя" class="form-control" name="name" required/>
                         </div>
                         <div class="form-group">
                             <input type="text" placeholder="+998 (9X) XXX-XX-XX" name="phone" class="form-control phone" required/>
                         </div>
                         <div class="form-group">
-                            <input type="number" placeholder="number" min="0" name="number" class="form-control" required/>
+                            <input type="number" placeholder="Количество" min="0" name="number" class="form-control" required/>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-block" value="MAKE ORDER"/>
+                            <input type="submit" class="btn btn-block" value="Отправить заказ"/>
                         </div>
                     </form>
                 </div>
             </div>
             <br>
             <div class="row">
-                <h3 class="text-center"><label for="info">Information</label></h3>
+                <h3 class="text-center"><label for="info">Информация о продукте</label></h3>
                 <textarea id="info" readonly>{{ $product->info }}</textarea>
             </div>
             <div class="row text-center">
                 <hr>
-                <h2>Same Products</h2>
+                <h2>Похожие продукты</h2>
                 <br>
                 @foreach($offers as $offer)
                     <div class="col-md-3 text-center">

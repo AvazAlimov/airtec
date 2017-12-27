@@ -2,7 +2,7 @@
 @section('script')
     <!--suppress CssUnusedSymbol -->
     <style>
-        #nav1, #nav2, #nav3, #nav4, #nav5 {
+         #nav2, #nav3, #nav4, #nav5 {
             display: none;
         }
         #contact {
