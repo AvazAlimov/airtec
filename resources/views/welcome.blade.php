@@ -5,7 +5,7 @@
     <!--suppress CssUnusedSymbol -->
     <style>
         body {
-            font-family: 'Rubik', sans-serif;
+            font-family: 'Century Gothic', sans-serif;
         }
 
         .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -29,8 +29,12 @@
         }
 
         .jumbotron {
+            height:685px;
             margin: 50px 0 0 0;
-            background-color: #00B0FF;
+
+            background: url('{{ asset('resources/gears_3.png') }}');
+            -webkit-background-size:;
+            background-size:cover;
             color: white;
         }
 
@@ -43,16 +47,15 @@
         }
 
         #catalogues {
-            background-image: linear-gradient(top, #00B0FF, #00B0FF 50%, transparent 50%, transparent 100%);
-            background-image: -webkit-linear-gradient(top, #00B0FF, #00B0FF 50%, transparent 50%, transparent 100%)
+            margin-top: -268px;
         }
 
         .card {
             box-shadow: 0 0 5px #AAA;
             background-color: white;
             border-radius: 2px;
-            padding: 24px;
-            margin-top: 16px;
+            padding: 1px;
+            margin-top: 50px;
             margin-bottom: 16px;
         }
 
@@ -82,16 +85,25 @@
         #contact {
             padding: 0;
         }
+        .copyright{
+            background-color:#f0f0f0;
+        }
+
+        .copyright p{
+            font-family:Roboto;
+            padding:15px 0 10px 0;
+        }
+
     </style>
 @endsection
 
 @section('content')
     <div class="jumbotron text-center">
-        <h1>AIRTEC <i class="fa fa-skyatlas"></i> UZ</h1>
+        <h1> <img src="{{ asset('resources/Untitled-2.png') }}" style="width: 20%;"> </h1>
         <br>
-        <h2>Ремонт и Сервисное Обслуживание Воздушно Винтовых Компрессоров и Осушителей</h2>
+        <h2 style="font-size: 55px; margin-top: -20px;">AirTechnic</h2>
         <br>
-        <a class="btn pulse" href="{{ route('catalogue') }}">Заказать</a>
+
     </div>
 
     <div id="catalogues" class="container-fluid text-center">
@@ -113,7 +125,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" >
                 <div class=" col-md-10 col-md-offset-1 card">
                     {{--<img src="{{ asset('resources/picture.png') }}" alt="PICTURE 1">--}}
                     <i class="fa fa-skyatlas" style="font-size: 128px;"></i>
@@ -136,7 +148,7 @@
                     <br>
                     <h4>Сепараторы</h4>
                     <hr>
-                    <p>
+                    <p style="height: 120px;">
                         Использование циклонных сепараторов преимущественно заметно на винтовых компрессорах.
                         Наша компания может предложить сепараторы на любые компрессоры, любых производителей.
                     </p>
@@ -347,6 +359,17 @@
                     <br>
                 </form>
             </div>
+        </div>
+    </div>
+
+
+    <div class="copyright" style="margin-top: 30px;">
+        <div class="container">
+
+            <div class="row text-center">
+                <p>Copyright © 2017 All rights reserved</p>
+            </div>
+
         </div>
     </div>
 @endsection
