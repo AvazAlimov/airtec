@@ -24,6 +24,10 @@
             height: 156px;
             margin: 0 auto 16px;
         }
+
+        .my-group .form-control{
+            width:50%;
+        }
     </style>
 @endsection
 
@@ -31,8 +35,14 @@
     <div class="container-fluid text-center" style="margin: 100px 0 0 0;">
         <div class="container">
             <form action="{{route('search')}}" class="col-md-8 col-md-offset-2" method="get">
-                <div class="input-group">
+                <div class="input-group my-group">
                     <input type="text" name="search" class="form-control" placeholder="Найти" value="{{Request::get('search')}}">
+                    <select id="tag" class="form-control" name="tag">
+                        <option selected value="">Категория</option>
+                        @foreach($tags as $tag)
+                            <option value="{{$tag->id}}" {{Request::get('tag') == $tag->id ? "selected" : ""}}>{{$tag->name}}</option>
+                        @endforeach
+                    </select>
                     <div class="input-group-btn">
                         <button class="btn btn-primary" type="submit">
                             <span class="glyphicon glyphicon-search"></span>
@@ -41,12 +51,7 @@
                 </div>
                 <div class="input-group col-md-8 col-md-offset-2">
                     <label for="tag"></label>
-                    <select id="tag" class="form-control" name="tag">
-                        <option disabled selected>Категория</option>
-                        @foreach($tags as $tag)
-                            <option value="{{$tag->id}}" {{Request::get('tag') == $tag->id ? "selected" : ""}}>{{$tag->name}}</option>
-                        @endforeach
-                    </select>
+
                 </div>
             </form>
         </div>

@@ -36,9 +36,9 @@ class WebController extends Controller
         return redirect()->route('welcome');
     }
     public function search(Request $request){
+        $products = Product::orderBy('id', 'desc');
+        if ($request->search != null || $request->search != "") {
 
-        if ($request->search != null || $request->search == "") {
-            $products = Product::orderBy('id', 'desc');
             if (substr($request->search, 0, 1) == "#") {
                 $products = $products->where('id', ltrim($request->search, '#'));
             }else {
