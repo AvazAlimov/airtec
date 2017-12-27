@@ -33,6 +33,7 @@
             margin: 50px 0 0 0;
 
             background: url('{{ asset('resources/gears_3.png') }}');
+
             -webkit-background-size:;
             background-size:cover;
             color: white;
@@ -102,7 +103,7 @@
 
 @section('content')
     <div class="jumbotron text-center">
-        <h1> <img src="{{ asset('resources/Untitled-2.png') }}" style="width: 20%;"> </h1>
+        <h1> <img src="{{ asset('resources/Untitled-2.png') }}" style="width: 300px;"> </h1>
         <br>
         <h2 style="font-size: 55px; margin-top: -20px;">AirTechnic</h2>
         <br>
