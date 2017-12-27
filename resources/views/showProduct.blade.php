@@ -94,6 +94,28 @@
                 <h3><label for="info">Information</label></h3>
                 <textarea id="info" readonly>{{ $product->info }}</textarea>
             </div>
+            <div class="row">
+                <hr>
+                <h2>Same Products</h2>
+                @foreach($same_products as $offer)
+                    <div class="col-md-4">
+                        <div class="col-md-10 col-md-offset-1 card">
+                            @if(count($offer->images) != 0)
+                                <div class="image col-md-12"
+                                     style="background-image: url('{{asset($product->getFirstImage())}}');">
+                                </div>
+                            @else
+                                <div class="image col-md-12"
+                                     style="background-image: url({{ asset('resources/product.svg') }});">
+                                </div>
+                            @endif
+                            <h4><strong>Цена:</strong> {{ $offer->price }} сум</h4>
+                            <p style="height: 132px; overflow: hidden; text-align: justify; padding: 16px;"> {{ $offer->info }} </p>
+                            <a class="btn" style="margin-bottom: 16px;" href="{{route('product.page', $offer->id)}}">Показать</a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection
