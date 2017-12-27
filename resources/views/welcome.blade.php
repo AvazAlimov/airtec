@@ -65,8 +65,11 @@
 
         #services {
             background-color: #f8f8f8;
+            padding-top: 30px;
         }
-
+        #about {
+            padding-top: 30px !important;
+        }
         #map {
             margin: 0 auto;
             height: 500px;
