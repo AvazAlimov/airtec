@@ -70,7 +70,7 @@ class WebController extends Controller
             $query->whereHas('tags', function ($query) use ($product){
                 $query->whereIn('id', $product->tags()->pluck('id'));
             });
-        })->where('id','!=',$product->id)->get()->random(3);
+        })->where('id','!=',$product->id)->get()->random(4);
         return view('showProduct')->withProduct($product)->withOffers($same_products);
     }
     public function order(Request $request, $id){

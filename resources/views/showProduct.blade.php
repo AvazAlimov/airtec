@@ -39,6 +39,25 @@
             width: 100%;
             display: block;
         }
+
+        .card {
+            margin-bottom: 16px;
+            padding: 0;
+            box-shadow: 0 0 5px #AAA;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+        .card:hover {
+            box-shadow: 0 0 10px #AAA;
+        }
+
+        .image {
+            background: no-repeat center;
+            background-size: cover;
+            height: 156px;
+            margin: 0 auto 16px;
+        }
     </style>
 @endsection
 
@@ -97,9 +116,10 @@
             <div class="row">
                 <hr>
                 <h2>Same Products</h2>
+                <br>
                 @foreach($offers as $offer)
-                    <div class="col-md-4">
-                        <div class="col-md-10 col-md-offset-1 card">
+                    <div class="col-md-3 text-center">
+                        <div class="col-md-12 card">
                             @if(count($offer->images) != 0)
                                 <div class="image col-md-12"
                                      style="background-image: url('{{asset($product->getFirstImage())}}');">
