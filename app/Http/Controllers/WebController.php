@@ -82,6 +82,6 @@ class WebController extends Controller
         $order->notify(new OrderNotification($product));
         $product->order_count = $product->order_count + 1;
         $product->save();
-        return redirect()->back()->with('message', "Sizning so'rovingiz qabul qilindi, siz bilan aloqaga chiqamiz");
+        return redirect()->back()->with('message', "Ваш заказ отправлен! Мы скоро с вами свяжемся.");
     }
 }
