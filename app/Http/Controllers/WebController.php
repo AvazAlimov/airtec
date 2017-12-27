@@ -71,7 +71,7 @@ class WebController extends Controller
                 $query->whereIn('id', $product->tags()->pluck('id'));
             });
         })->where('id','!=',$product->id)->get()->random(3);
-        return view('showProduct')->withProduct($product)->withSame_products($same_products);
+        return view('showProduct')->withProduct($product)->withOffers($same_products);
     }
     public function order(Request $request, $id){
         $request->validate([
