@@ -66,7 +66,12 @@ class WebController extends Controller
         $product = Product::findOrFail($id);
         $product->view_count = $product->view_count + 1;
         $product->save();
-        return view('showProduct')->withProduct($product);
+        $same_products = Product::where(function ($query) use ($product){
+            $query->whereHas('tags', function ($query) use ($product){
+                $query->whereIn('id', $product->tags()->pluck('id'));
+            });
+        })->where('id','!=',$product->id)->get()->random(3);
+        return view('showProduct')->withProduct($product)->withSame_products($same_products);
     }
     public function order(Request $request, $id){
         $request->validate([
