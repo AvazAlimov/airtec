@@ -55,8 +55,8 @@
                     <!-- Authentication Links -->
 
                     @guest
-                    <li id="nav1"><a href="#">ГЛАВНАЯ</a></li>
-                    <li id="nav2"><a href="#catalogues">КАТАЛОГ</a></li>
+                    <li id="nav1"><a href="{{ route('welcome') }}">ГЛАВНАЯ</a></li>
+                    <li id="nav2"><a href="{{ route('catalogue') }}">КАТАЛОГ</a></li>
                     <li id="nav3"><a href="#services">СЕРВИСЫ</a></li>
                     <li id="nav4"><a href="#about">О НАС</a></li>
                     <li id="nav5"><a href="#contact">КОНТАКТЫ</a></li>
